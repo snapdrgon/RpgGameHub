@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace RpgGameHub.Models
+namespace RpgGameHub.Core.ViewModels
 {
     public class ExternalLoginConfirmationViewModel
     {

@@ -9,11 +9,31 @@
     padding-right: 15px;
 }
 
+.form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.dropdown-menu {
+     -webkit-box-shadow: none; 
+     box-shadow: none; 
+}
+
+.btn {
+    border-radius: 8px;
+    -moz-border-radius:8px;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
 .dl-horizontal dt {
     white-space: normal;
+}
+
+.form-control {
+    border-radius: 8px;
+    -moz-border-radius:8px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -22,3 +42,67 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.voffset {
+  margin-top: 2px;
+}
+.voffset1 {
+  margin-top: 5px;
+}
+.voffset2 {
+  margin-top: 10px;
+}
+.voffset3 {
+  margin-top: 20px;
+}
+.voffset4 {
+  margin-top: 40px;
+}
+.voffset5 {
+  margin-top: 80px;
+}
+
+/*BootStrap Overrides*/
+
+body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar-inverse {
+    background-color: #0094ff;
+    border-color: #0094ff;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+.navbar-fixed-top {
+    min-height: 80px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 80px;    
+    font-size: 24px
+}
+
+.navbar-brand {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 80px;
+    font-size: 24px
+
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+ .navbar-inverse .navbar-nav > .open > a:hover, 
+.navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #555be6;
+}
+

@@ -180,19 +180,38 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MeetupController.cs" />
+    <Compile Include="Core\Models\Meetup.cs" />
+    <Compile Include="Core\Models\RpgGameType.cs" />
+    <Compile Include="Core\ViewModels\FutureDate.cs" />
+    <Compile Include="Core\ViewModels\MeetupFormViewModel.cs" />
+    <Compile Include="Core\ViewModels\MeetupViewModel.cs" />
+    <Compile Include="Core\ViewModels\ValidTime.cs" />
     <Compile Include="Extensions\IdentityExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Persistence\Migrations\201607191815235_InitialCreation.cs" />
-    <Compile Include="Persistence\Migrations\201607191815235_InitialCreation.Designer.cs">
+    <Compile Include="Migrations\201607191815235_InitialCreation.cs" />
+    <Compile Include="Migrations\201607191815235_InitialCreation.Designer.cs">
       <DependentUpon>201607191815235_InitialCreation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Persistence\Migrations\201607192238363_AddHandle.cs" />
-    <Compile Include="Persistence\Migrations\201607192238363_AddHandle.Designer.cs">
+    <Compile Include="Migrations\201607192238363_AddHandle.cs" />
+    <Compile Include="Migrations\201607192238363_AddHandle.Designer.cs">
       <DependentUpon>201607192238363_AddHandle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Persistence\Migrations\Configuration.cs" />
+    <Compile Include="Migrations\201607210220090_AddMeetup.cs" />
+    <Compile Include="Migrations\201607210220090_AddMeetup.Designer.cs">
+      <DependentUpon>201607210220090_AddMeetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607242013572_UpdateMeetup.cs" />
+    <Compile Include="Migrations\201607242013572_UpdateMeetup.Designer.cs">
+      <DependentUpon>201607242013572_UpdateMeetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607242239457_IsCancelledField.cs" />
+    <Compile Include="Migrations\201607242239457_IsCancelledField.Designer.cs">
+      <DependentUpon>201607242239457_IsCancelledField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\ViewModels\AccountViewModels.cs" />
     <Compile Include="Core\Models\ApplicationUser.cs" />
     <Compile Include="Core\ViewModels\ManageViewModels.cs" />
@@ -257,6 +276,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Meetup\MeetupForm.cshtml" />
+    <Content Include="Views\Shared\Meetups.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -270,11 +291,20 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Persistence\Migrations\201607191815235_InitialCreation.resx">
+    <EmbeddedResource Include="Migrations\201607191815235_InitialCreation.resx">
       <DependentUpon>201607191815235_InitialCreation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Persistence\Migrations\201607192238363_AddHandle.resx">
+    <EmbeddedResource Include="Migrations\201607192238363_AddHandle.resx">
       <DependentUpon>201607192238363_AddHandle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607210220090_AddMeetup.resx">
+      <DependentUpon>201607210220090_AddMeetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607242013572_UpdateMeetup.resx">
+      <DependentUpon>201607242013572_UpdateMeetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607242239457_IsCancelledField.resx">
+      <DependentUpon>201607242239457_IsCancelledField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

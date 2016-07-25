@@ -1,0 +1,37 @@
+﻿@model RpgGameHub.Core.ViewModels.MeetupFormViewModel
+@{
+    ViewBag.Title = "Meetup";
+}
+
+<h2>@Model.Heading</h2>
+
+@using (Html.BeginForm(Model.Action, "Meetup"))
+{
+    <p class="alert alert-info"> All fields are <strong>required</strong>.</p>
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.Label("Rpg Game")
+        @Html.EnumDropDownListFor(model => model.RgpGame, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.RgpGame)
+    </div>
+   <div class="form-group">
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", placeholder = "1 Jan 2017", autofocus = "autofocus" })
+        @Html.ValidationMessageFor(m => m.Date)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Time)
+        @Html.TextBoxFor(m => m.Time, new { @class = "form-control", placeholder = "12:35" })
+        @Html.ValidationMessageFor(m => m.Time)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Details)
+        @Html.TextAreaFor(m => m.Details, new { @class = "form-control", placeholder = "information on the meetup" })
+        @Html.ValidationMessageFor(m => m.Details)
+   </div>
+
+
+    <button type="submit" class="btn btn-primary btn-lg">Save</button>
+
+}
+

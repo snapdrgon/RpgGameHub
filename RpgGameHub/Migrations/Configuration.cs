@@ -1,4 +1,4 @@
-namespace RpgGameHub.Core.Migrations
+namespace RpgGameHub.Migrations
 {
     using Persistence;
     using System.Data.Entity.Migrations;

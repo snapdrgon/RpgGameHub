@@ -1,16 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNet.Identity;
+using RpgGameHub.Core.ViewModels;
+using RpgGameHub.Persistence;
+using System;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace RpgGameHub.Controllers
 {
     public class HomeController : Controller
     {
+
+        private ApplicationDbContext _context;
+
+        public HomeController()
+        {
+            _context = new ApplicationDbContext();
+        }
         public ActionResult Index()
         {
-            return View();
+            var userId = User.Identity.GetUserId();
+            var upcomingMeetups = _context.Meetups.Where(
+                m=>m.DateTime > DateTime.Now
+                && !m.IsCancelled).ToList();
+
+            var viewModel = new MeetupViewModel
+            {
+                Heading = "Upcoming Meetups",
+                upcomingMeetups = upcomingMeetups
+            };
+
+            return View("Meetups", viewModel);
         }
 
         public ActionResult About()

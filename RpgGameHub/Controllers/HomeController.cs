@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using RpgGameHub.Core.ViewModels;
 using RpgGameHub.Persistence;
-using System;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace RpgGameHub.Controllers
@@ -10,18 +8,16 @@ namespace RpgGameHub.Controllers
     public class HomeController : Controller
     {
 
-        private ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public HomeController()
+        public HomeController(IUnitOfWork unitOfWork)
         {
-            _context = new ApplicationDbContext();
+            _unitOfWork = unitOfWork;
         }
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
-            var upcomingMeetups = _context.Meetups.Where(
-                m=>m.DateTime > DateTime.Now
-                && !m.IsCancelled).ToList();
+            var upcomingMeetups = _unitOfWork.Meetups.GetUpComingMeetups();
 
             var viewModel = new MeetupViewModel
             {

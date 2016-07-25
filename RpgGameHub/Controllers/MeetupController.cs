@@ -10,11 +10,11 @@ namespace RpgGameHub.Controllers
     public class MeetupController : Controller
     {
 
-        private readonly ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public MeetupController()
+        public MeetupController(IUnitOfWork unitOfWork)
         {
-            _context = new ApplicationDbContext();
+            _unitOfWork = unitOfWork;
         }
 
         [Authorize]
@@ -48,8 +48,8 @@ namespace RpgGameHub.Controllers
              
             };
 
-            _context.Meetups.Add(meetup);
-            _context.SaveChanges();
+            _unitOfWork.Meetups.Add(meetup);
+            _unitOfWork.Complete();
 
             return RedirectToAction("Index", "Home");
         }

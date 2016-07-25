@@ -4,7 +4,7 @@ using System.Data.Entity;
 
 namespace RpgGameHub.Persistence
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
     {
         public DbSet<Meetup> Meetups { get; set; }
 

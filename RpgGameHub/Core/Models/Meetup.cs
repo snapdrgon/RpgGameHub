@@ -20,6 +20,9 @@ namespace RpgGameHub.Core.Models
 
         [Required]
         public byte RgpGameId { get; set; }
+
+        [Required]
+        public string Handle { get; set; }
         public bool IsCancelled { get; set; }
     }
 }

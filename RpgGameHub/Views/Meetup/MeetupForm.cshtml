@@ -1,6 +1,6 @@
 ﻿@model RpgGameHub.Core.ViewModels.MeetupFormViewModel
 @{
-    ViewBag.Title = "Meetup";
+    ViewBag.Title = Model.Heading;
 }
 
 <h2>@Model.Heading</h2>
@@ -11,12 +11,12 @@
     @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.Label("Rpg Game")
-        @Html.EnumDropDownListFor(model => model.RgpGame, htmlAttributes: new { @class = "form-control" })
+        @Html.EnumDropDownListFor(model => model.RgpGame,"Select a game", htmlAttributes: new { @class = "form-control", autofocus = "autofocus"})
         @Html.ValidationMessageFor(model => model.RgpGame)
     </div>
    <div class="form-group">
         @Html.LabelFor(m => m.Date)
-        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", placeholder = "1 Jan 2017", autofocus = "autofocus" })
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", placeholder = "1 Jan 2017" })
         @Html.ValidationMessageFor(m => m.Date)
     </div>
     <div class="form-group">
@@ -34,4 +34,10 @@
     <button type="submit" class="btn btn-primary btn-lg">Save</button>
 
 }
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
 

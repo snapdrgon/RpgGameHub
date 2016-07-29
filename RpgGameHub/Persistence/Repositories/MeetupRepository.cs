@@ -17,7 +17,8 @@ namespace RpgGameHub.Persistence.Repositories
         {
             return _context.Meetups.Where(
                 m => m.DateTime > DateTime.Now
-                && !m.IsCancelled).ToList();
+                && !m.IsCancelled).OrderBy(m=>m.DateTime)
+                .ToList();
         }
 
         public void Add(Meetup meetup)

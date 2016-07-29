@@ -4,8 +4,9 @@ using System.Globalization;
 
 namespace GigHub.Core.ViewModels
 {
-    public class FutureDate : ValidationAttribute
+    sealed public class FutureDate : ValidationAttribute
     {
+        const string ErrorMessageDateString = "The date is not in the form dd MMM yyyy e.g. 12 Mar 2017.";
         public override bool IsValid(object value)
         {
             DateTime dateTime;
@@ -17,5 +18,12 @@ namespace GigHub.Core.ViewModels
                 out dateTime);
             return (isValid && dateTime > DateTime.Now);
         }
+
+        public override string FormatErrorMessage(string name)
+        {
+            return String.Format(CultureInfo.CurrentCulture,
+              ErrorMessageDateString, name);
+        }
+
     }
 }

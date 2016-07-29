@@ -24,6 +24,7 @@
     -moz-border-radius:8px;
 }
 
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -60,6 +61,61 @@ textarea {
 }
 .voffset5 {
   margin-top: 80px;
+}
+
+.meetups {
+    list-style:none;
+}
+
+.meetups > li .meetup {
+    width:235px;
+    height:70px;
+}
+
+.meetups > li .meetup .date {
+  background-color:orange;
+  color: white;
+  text-align:center;
+  width: 80px;
+  border-radius: 8px;
+  -ms-border-radius: 8px;
+}
+
+.meetups li > .meetup .date .month {
+   text-transform: uppercase;
+
+}
+
+.meetups li > .meetup .date .day {
+
+}
+.meetups li > .meetup .date .year {
+
+
+}
+
+.meetups > li .meetup .details {
+    position: relative;
+    top: -60px; 
+    left: 89px;
+    background-color:orange;
+    color: white;
+    text-align: center;
+    width: 141px;
+    height: 60px;
+    border-radius: 8px;
+    -ms-border-radius: 8px;
+}
+
+.meetups li > .meetup .details .rpgGame {
+    font-size:large;
+    font-weight:bold;
+
+}
+.meetups li > meetup .details .gameMaster {
+    position:relative;
+    top:0;
+
 }
 
 /*BootStrap Overrides*/
@@ -115,3 +171,9 @@ body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border-top-color:white;
     border-bottom-color:white;
 }
+
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+

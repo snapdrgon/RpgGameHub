@@ -210,12 +210,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeetupController.cs" />
+    <Compile Include="Core\Common\SharedTools.cs" />
     <Compile Include="Core\Models\Meetup.cs" />
     <Compile Include="Core\Models\RpgGameType.cs" />
     <Compile Include="Core\ViewModels\FutureDate.cs" />
     <Compile Include="Core\ViewModels\MeetupFormViewModel.cs" />
     <Compile Include="Core\ViewModels\MeetupViewModel.cs" />
+    <Compile Include="Core\ViewModels\ValidRpgGame.cs" />
     <Compile Include="Core\ViewModels\ValidTime.cs" />
+    <Compile Include="Extensions\EnumExtension.cs" />
     <Compile Include="Extensions\IdentityExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -239,6 +242,10 @@
     <Compile Include="Migrations\201607242239457_IsCancelledField.cs" />
     <Compile Include="Migrations\201607242239457_IsCancelledField.Designer.cs">
       <DependentUpon>201607242239457_IsCancelledField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607261902030_AddHandleToMeetup.cs" />
+    <Compile Include="Migrations\201607261902030_AddHandleToMeetup.Designer.cs">
+      <DependentUpon>201607261902030_AddHandleToMeetup.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\ViewModels\AccountViewModels.cs" />
@@ -339,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607242239457_IsCancelledField.resx">
       <DependentUpon>201607242239457_IsCancelledField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607261902030_AddHandleToMeetup.resx">
+      <DependentUpon>201607261902030_AddHandleToMeetup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,6 @@
 ﻿@model RpgGameHub.Core.ViewModels.MeetupViewModel
+@using RpgGameHub.Core.Models;
+@using RpgGameHub.Extensions;
 @{
     ViewBag.Title = "Meetups";
 }
@@ -9,20 +11,25 @@
     @foreach (var meetup in Model.upcomingMeetups)
     {
         <li>
-            <div class="date">
-                <div class="month">
-                    @meetup.DateTime.ToString("MMM")
+            <div class="meetup">
+                <div class="date">
+                    <div class="month">
+                        @meetup.DateTime.ToString("MMM")
+                    </div>
+                    <div class="day">
+                        @meetup.DateTime.ToString("d ")
+                    </div>
+                    <div class="year">
+                        @meetup.DateTime.ToString("yyyy")
+                    </div>
                 </div>
-                <div class="day">
-                    @meetup.DateTime.ToString("d ")
+                <div class="details">
+                    @{
+                        var rpgGame = ((RpgGameType)meetup.RgpGameId).EnumDesc();
+                    }
+                    <span class="rpgGame">@rpgGame</span>
+                    <div class="gameMaster">@meetup.Handle</div>
                 </div>
-            </div>
-            <div class="details">
-              @*  <span class="gameMaster">@meetup.Gamer.Handle</span>*@
-                @{
-                    var rpgGame = Model.RgpGame.ToString();
-                }
-                <span class="rpgGame">@rpgGame</span>
             </div>
 
         </li>

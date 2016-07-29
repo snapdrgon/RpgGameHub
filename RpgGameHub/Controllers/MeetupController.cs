@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using RpgGameHub.Core.Models;
 using RpgGameHub.Core.ViewModels;
+using RpgGameHub.Extensions;
 using RpgGameHub.Persistence;
 using System;
 using System.Web.Mvc;
@@ -42,6 +43,7 @@ namespace RpgGameHub.Controllers
             var meetup = new Meetup
             {
                 GamerId = User.Identity.GetUserId(),
+                Handle = User.Identity.GetHandle(),
                 DateTime = viewModel.GetDateTime(),
                 Details = viewModel.Details,
                 RgpGameId = Convert.ToByte(viewModel.RgpGame)

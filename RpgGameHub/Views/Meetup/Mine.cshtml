@@ -1,0 +1,45 @@
+﻿
+@model IEnumerable<RpgGameHub.Core.Models.Meetup>
+@using RpgGameHub.Core.Models;
+@using RpgGameHub.Extensions;
+@{
+    ViewBag.Title = "My Meetups";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<ul class="meetups voffset4">
+    @foreach (var meetup in Model)
+    {
+            <li>
+                <div class="meetup">
+                    <div class="date">
+                        <div class="month">
+                            @meetup.DateTime.ToString("MMM")
+                        </div>
+                        <div class="day">
+                            @meetup.DateTime.ToString("d ")
+                        </div>
+                        <div class="year">
+                            @meetup.DateTime.ToString("yyyy")
+                        </div>
+                    </div>
+                    <div class="game">
+                        <div class="details">
+                            @{
+                                var rpgGame = ((RpgGameType)meetup.RgpGameId).EnumDesc();
+                            }
+                            <span class="rpgGame">@rpgGame</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a href="@Url.Action("Edit","Meetup", new { id = meetup.Id })">
+                            Edit
+                        </a>|
+                        <a href="#" class="js-cancel-gig"
+                           data-meetup-id="@meetup.Id">Cancel</a>
+                    </div>
+                 </div>
+            </li>
+     }
+</ul>

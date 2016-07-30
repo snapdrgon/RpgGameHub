@@ -23,6 +23,11 @@ namespace RpgGameHub.Core.Models
 
         [Required]
         public string Handle { get; set; }
-        public bool IsCancelled { get; set; }
+        public bool IsCancelled { get; set; } //taz change back to private once going to production
+
+        public void Cancel()
+        {
+            IsCancelled = true;
+        }
     }
 }

@@ -112,12 +112,48 @@ textarea {
     font-weight:bold;
 
 }
-.meetups li > meetup .details .gameMaster {
+.meetups li > .meetup .details .gameMaster {
     position:relative;
     top:0;
 
 }
 
+.meetups > li .game .details {
+    position: relative;
+    top: -60px;
+    left: 89px;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    width: 141px;
+    height: 36px;
+    border-radius: 8px;
+    -ms-border-radius: 8px;
+}
+
+.meetups li > .game .details .rpgGame {
+    font-size:large;
+    font-weight:bold;
+
+}
+.meetups li > .game .details .gameMaster {
+    position:relative;
+    top:0;
+
+}
+
+.meetups li > .meetup .actions {
+    position: relative;
+    top: -57px;
+    left: 89px;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    width: 141px;
+    height: 21px;
+    border-radius: 8px;
+    -ms-border-radius: 8px;
+}
 /*BootStrap Overrides*/
 
 body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {

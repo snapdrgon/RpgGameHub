@@ -10,8 +10,7 @@
         <li class="dropdown">
             <a href="#" data-toggle="dropdown" role="button">@User.Identity.GetHandle()<span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="#">Gem's I'm Following</a></li>
-                <li><a href="#">Handle's I'm Following</a></li>
+                <li><a href="@Url.Action("Mine","Meetup")">My Upcoming Meetups</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
 

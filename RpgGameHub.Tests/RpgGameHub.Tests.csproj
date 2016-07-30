@@ -83,6 +83,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Controllers\Api\MeetupControllerTests.cs" />
     <Compile Include="Extensions\MockDbSetExtensions.cs" />
     <Compile Include="Extensions\ApiControllerExtensions.cs" />
     <Compile Include="Persistence\Repositories\MeetupRepositoryTests.cs" />
@@ -92,9 +93,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\RpgGameHub\RpgGameHub.csproj">
       <Project>{c9aef229-bb19-43e7-8ba3-a7481010811f}</Project>

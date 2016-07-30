@@ -29,6 +29,15 @@ namespace RpgGameHub.Controllers
             return View("MeetupForm", viewModel);
         }
 
+        [Authorize]
+        public ActionResult Mine()
+        {
+            var userId = User.Identity.GetUserId();
+            var meetups = _unitOfWork.Meetups.GetUpComingMeetupsByGameMaster(userId);
+
+            return View(meetups);
+        }
+
 
         [Authorize]
         [HttpPost]

@@ -17,10 +17,22 @@ namespace RpgGameHub.Persistence.Repositories
         {
             return _context.Meetups.Where(
                 m => m.DateTime > DateTime.Now
-                && !m.IsCancelled).OrderBy(m=>m.DateTime)
-                .ToList();
+                && !m.IsCancelled).OrderBy(m => m.DateTime).ToList();
         }
 
+        public IEnumerable<Meetup> GetUpComingMeetupsByGameMaster(string userId)
+        {
+            return _context.Meetups.Where(
+                m => m.DateTime > DateTime.Now && m.GamerId==userId
+                &&  !m.IsCancelled).OrderBy(m => m.DateTime).ToList();
+        }
+
+        public Meetup GetSingleMeetupAssociatedWithGameMaster(int id, string userId)
+        {
+            var meetup = _context.Meetups.SingleOrDefault(m => m.Id == id &&
+            m.GamerId==userId);
+            return meetup;
+        }
         public void Add(Meetup meetup)
         {
             _context.Meetups.Add(meetup);

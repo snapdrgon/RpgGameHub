@@ -31,8 +31,8 @@ namespace RpgGameHub.Tests.Persistence.Repositories
             var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(-1), GamerId = "1" };
             _mockMeetups.SetSource(new[] { meetup });
             mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
-            var gigs = _repository.GetUpComingMeetups();
-            gigs.Should().BeEmpty();
+            var meetups = _repository.GetUpComingMeetups();
+            meetups.Should().BeEmpty();
 
         }
 
@@ -42,21 +42,65 @@ namespace RpgGameHub.Tests.Persistence.Repositories
             var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", IsCancelled = true };
             _mockMeetups.SetSource(new[] { meetup });
             mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
-            var gigs = _repository.GetUpComingMeetups();
-            gigs.Should().BeEmpty();
+            var meetups = _repository.GetUpComingMeetups();
+            meetups.Should().BeEmpty();
 
         }
 
         [TestMethod]
         public void GetUpComingMeetups_GetMeetupHappyPath_ShouldReturnData()
         {
-            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1"};
+            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1" };
             _mockMeetups.SetSource(new[] { meetup });
             mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
-            var gigs = _repository.GetUpComingMeetups();
-            gigs.Should().NotBeEmpty();
+            var meetups = _repository.GetUpComingMeetups();
+            meetups.Should().NotBeEmpty();
 
         }
+        [TestMethod]
+        public void GetUpComingMeetupsByGameMaster_GetMeetupHappyPath_ShouldReturnData()
+        {
+            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1" };
+            _mockMeetups.SetSource(new[] { meetup });
+            mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
+            var meetups = _repository.GetUpComingMeetupsByGameMaster("1");
+            meetups.Should().NotBeEmpty();
+
+        }
+
+        [TestMethod]
+        public void GetUpComingMeetupsByGameMaster_InvalidUser_ShouldReturnData()
+        {
+            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1" };
+            _mockMeetups.SetSource(new[] { meetup });
+            mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
+            var meetups = _repository.GetUpComingMeetupsByGameMaster("2");
+            meetups.Should().BeEmpty();
+
+        }
+
+        [TestMethod]
+        public void GetSingleMeetupAssociatedWithGameMaster_ValidUser_ShouldReturnData()
+        {
+            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", Id = 1 };
+            _mockMeetups.SetSource(new[] { meetup });
+            mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
+            var meetups = _repository.GetSingleMeetupAssociatedWithGameMaster(1, "1");
+            meetups.Should().BeOfType<Meetup>();
+
+        }
+
+        [TestMethod]
+        public void GetSingleMeetupAssociatedWithGameMaster_InvalidUser_ShouldBeEmpty()
+        {
+            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", Id = 1 };
+            _mockMeetups.SetSource(new[] { meetup });
+            mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
+            var meetups = _repository.GetSingleMeetupAssociatedWithGameMaster(1, "2");
+            meetups.Should().BeNull();
+
+        }
+
 
     }
 }

@@ -32,12 +32,11 @@
                             <span class="rpgGame">@rpgGame</span>
                         </div>
                     </div>
-                    <div class="actions">
+                    <div ng-controller="MeetupController" class="actions">
                         <a href="@Url.Action("Edit","Meetup", new { id = meetup.Id })">
                             Edit
                         </a>|
-                        <a href="#" class="js-cancel-gig"
-                           data-meetup-id="@meetup.Id">Cancel</a>
+                        <a href="#" ng-click="cancelMeetup(@meetup.Id)">Cancel</a>
                     </div>
                  </div>
             </li>

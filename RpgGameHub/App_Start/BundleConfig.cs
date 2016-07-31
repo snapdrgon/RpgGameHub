@@ -8,11 +8,18 @@ namespace RpgGameHub
         public static void RegisterBundles(BundleCollection bundles)
         {
 
-            bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
-                        "~/Scripts/angular.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                     "~/Scripts/app/app.js",
+                      "~/Scripts/app/rpggamehub.js",
+                     "~/Scripts/app/controllers/meetupcontroller.js"
+                     ));
 
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            bundles.Add(new ScriptBundle("~/bundles/lib").Include(
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/bootstrap.min.js",
+                        "~/Scripts/bootbox.min.js",
+                        "~/Scripts/angular.min.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));

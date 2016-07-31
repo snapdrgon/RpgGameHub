@@ -4,6 +4,7 @@ using System.Web.Http;
 
 namespace RpgGameHub.Controllers.Api
 {
+    [Authorize]
     public class MeetupController : ApiController, IMeetupController
     {
 

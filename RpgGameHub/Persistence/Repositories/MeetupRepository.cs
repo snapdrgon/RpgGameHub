@@ -16,8 +16,8 @@ namespace RpgGameHub.Persistence.Repositories
         public IEnumerable<Meetup> GetUpComingMeetups()
         {
             return _context.Meetups.Where(
-                m => m.DateTime > DateTime.Now
-                && !m.IsCancelled).OrderBy(m => m.DateTime).ToList();
+                m => m.DateTime > DateTime.Now)
+                .OrderBy(m => m.DateTime).ToList();
         }
 
         public IEnumerable<Meetup> GetUpComingMeetupsByGameMaster(string userId)

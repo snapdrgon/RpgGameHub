@@ -30,8 +30,14 @@
                     <span class="rpgGame">@rpgGame</span>
                     <div class="gameMaster">@meetup.Handle</div>
                 </div>
+                <div class="status">
+                    @if (meetup.IsCancelled)
+                    {
+                        <span class="badge">Cancelled</span>
+                    }
+                </div>
             </div>
 
         </li>
-            }
+                        }
 </ul>

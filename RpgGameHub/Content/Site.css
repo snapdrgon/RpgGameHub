@@ -154,6 +154,7 @@ textarea {
     border-radius: 8px;
     -ms-border-radius: 8px;
 }
+
 /*BootStrap Overrides*/
 
 body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -213,3 +214,11 @@ span.field-validation-error {
     font-weight: bold;
 }
 
+.badge {
+    position: relative;
+    top: -98px;
+    left: 114px;
+    font-size: 15px;
+    background-color: orangered;
+    border-radius: 8px;
+}

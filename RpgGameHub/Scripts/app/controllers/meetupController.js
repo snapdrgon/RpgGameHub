@@ -1,20 +1,46 @@
 ﻿(function () {
     'use strict';
+    var module = angular.module('meetupApp');
 
-    function MeetupController($scope, $http) {
+    var MeetupController = function ($scope, rpgGameHub) {
 
-       $scope.cancelMeetup = function (rpgGameId) {
-           var url = '/api/meetup/' + rpgGameId;
-            return $http.delete(url)
-                .then(function (response) {
-                    return response.data;
-                });
+        $scope.cancelMeetup = function (rpgGameId) {
+            $scope.gameId = rpgGameId; //do this so we can pass further down
+            bootbox.dialog({
+                message: "Are you sure you want to cancel this meetup?",
+                title: "Confirm",
+                buttons: {
+                    no: {
+                        label: "No",
+                        className: "btn-success",
+                        callback: function () {
+                         bootbox.hideAll();
+                        }
+                    },
+                    yes: {
+                        label: "Yes",
+                        className: "btn-danger",
+                        callback: function () {
+                            rpgGameHub.cancelMeetup($scope.gameId)
+                            .then(onCancel, onError);
+                        }
+                    }
+                }
+            });
         };
+
+         var onCancel = function (response) {
+             $scope.cancel = response;
+             window.location.reload();
+         };
+
+         var onError = function (reason) {
+             $scope.error = reason;
+         };
+
     }
 
-    angular
-     .module('meetupApp')
-     .controller('MeetupController', MeetupController);
+    module.controller("MeetupController", MeetupController);
 
 
 

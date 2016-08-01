@@ -64,5 +64,60 @@ namespace RpgGameHub.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        [Authorize]
+        public ActionResult Edit(int Id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            var userId = User.Identity.GetUserId();
+
+            var meetup = _unitOfWork.Meetups.GetSingleMeetupAssociatedWithGameMaster(Id, userId);
+
+            var viewModel = new MeetupFormViewModel
+            {
+                Details = meetup.Details,
+                RgpGame = (RpgGameType)meetup.RgpGameId,
+                Id = meetup.Id,
+                Date = meetup.DateTime.ToString("d MMM yyyy"),
+                Time = meetup.DateTime.ToString("HH:mm"),
+                Heading = "Edit a Meetup"
+            };
+
+            return View("MeetupForm", viewModel);
+
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(MeetupFormViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("MeetupForm", viewModel);
+            }
+
+            var userId = User.Identity.GetUserId();
+            var meetup = _unitOfWork.Meetups.GetSingleMeetupAssociatedWithGameMaster(viewModel.Id, userId);
+
+            if (meetup == null)
+                return HttpNotFound();
+
+            if (meetup.GamerId != userId)
+                return new HttpUnauthorizedResult();
+
+            meetup.Details = viewModel.Details;
+            meetup.RgpGameId = (byte)viewModel.RgpGame;
+            meetup.DateTime = viewModel.GetDateTime();
+
+           _unitOfWork.Complete();
+
+            return RedirectToAction("Mine", "Meetup");
+        }
+
     }
 }

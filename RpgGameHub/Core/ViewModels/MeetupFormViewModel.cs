@@ -38,8 +38,7 @@ namespace RpgGameHub.Core.ViewModels
             get
             {
                 Expression<Func<MeetupController, ActionResult>> update =
-  //                  (c => c.Update(this));
-                (c => c.Create(this));
+                   (c => c.Update(this));
 
                 Expression<Func<MeetupController, ActionResult>> create =
                     (c => c.Create(this));

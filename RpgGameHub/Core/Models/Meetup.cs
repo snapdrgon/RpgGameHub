@@ -18,6 +18,9 @@ namespace RpgGameHub.Core.Models
         [StringLength(250)]
         public string Details { get; set; }
 
+        [StringLength(100)]
+        public string Hub { get; set; }
+
         [Required]
         public byte RgpGameId { get; set; }
 

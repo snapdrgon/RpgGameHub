@@ -29,6 +29,8 @@ namespace RpgGameHub.Core.ViewModels
 
         public string Details { get; set; }
 
+        public string Hub { get; set; }
+
         [Required]
         [ValidRpgGame]
         public RpgGameType? RgpGame { get; set; }

@@ -55,6 +55,7 @@ namespace RpgGameHub.Controllers
                 Handle = User.Identity.GetHandle(),
                 DateTime = viewModel.GetDateTime(),
                 Details = viewModel.Details,
+                Hub = viewModel.Hub,
                 RgpGameId = Convert.ToByte(viewModel.RgpGame)
              
             };
@@ -80,6 +81,7 @@ namespace RpgGameHub.Controllers
             var viewModel = new MeetupFormViewModel
             {
                 Details = meetup.Details,
+                Hub = meetup.Hub,
                 RgpGame = (RpgGameType)meetup.RgpGameId,
                 Id = meetup.Id,
                 Date = meetup.DateTime.ToString("d MMM yyyy"),
@@ -110,6 +112,7 @@ namespace RpgGameHub.Controllers
             if (meetup.GamerId != userId)
                 return new HttpUnauthorizedResult();
 
+            meetup.Hub = viewModel.Hub;
             meetup.Details = viewModel.Details;
             meetup.RgpGameId = (byte)viewModel.RgpGame;
             meetup.DateTime = viewModel.GetDateTime();

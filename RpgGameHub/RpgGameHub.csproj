@@ -224,6 +224,10 @@
     <Compile Include="Migrations\201608031600486_CleanMigrationIncludingMeetupTable.Designer.cs">
       <DependentUpon>201608031600486_CleanMigrationIncludingMeetupTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608031837468_AddHubFieldToMeetupTable.cs" />
+    <Compile Include="Migrations\201608031837468_AddHubFieldToMeetupTable.Designer.cs">
+      <DependentUpon>201608031837468_AddHubFieldToMeetupTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\ViewModels\AccountViewModels.cs" />
     <Compile Include="Core\Models\ApplicationUser.cs" />
@@ -317,6 +321,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201608031600486_CleanMigrationIncludingMeetupTable.resx">
       <DependentUpon>201608031600486_CleanMigrationIncludingMeetupTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608031837468_AddHubFieldToMeetupTable.resx">
+      <DependentUpon>201608031837468_AddHubFieldToMeetupTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -26,6 +26,11 @@
         @Html.ValidationMessageFor(m => m.Time)
     </div>
     <div class="form-group">
+        @Html.LabelFor(m => m.Hub)
+        @Html.TextAreaFor(m => m.Hub, new { @class = "form-control", placeholder = "location for meetup" })
+        @Html.ValidationMessageFor(m => m.Hub)
+    </div>
+    <div class="form-group">
         @Html.LabelFor(m => m.Details)
         @Html.TextAreaFor(m => m.Details, new { @class = "form-control", placeholder = "information on the meetup" })
         @Html.ValidationMessageFor(m => m.Details)

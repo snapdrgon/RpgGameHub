@@ -10,6 +10,8 @@ namespace RpgGameHub.Core.ViewModels
         const string ErrorMessageRpgGameString = "You must select a Game.";
         public override bool IsValid(object value)
         {
+            if (value == null)
+                return false;
             var isValid = (RpgGameType)value >= RpgGameType.DivinityOS;
             return (isValid);
         }

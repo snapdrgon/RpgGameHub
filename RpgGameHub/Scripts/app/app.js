@@ -1,7 +1,8 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('meetupApp', ["ngRoute"]);
+    angular.module('meetupApp', []);
+   // angular.module('meetupApp', ["ngRoute"]);
     //use when ready to setup some angular pages
     //(function () {
     //    app.config(function ($routeProvider) {

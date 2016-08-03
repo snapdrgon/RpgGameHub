@@ -11,34 +11,34 @@
 <ul class="meetups voffset4">
     @foreach (var meetup in Model)
     {
-            <li>
-                <div class="meetup">
-                    <div class="date">
-                        <div class="month">
-                            @meetup.DateTime.ToString("MMM")
-                        </div>
-                        <div class="day">
-                            @meetup.DateTime.ToString("d ")
-                        </div>
-                        <div class="year">
-                            @meetup.DateTime.ToString("yyyy")
-                        </div>
+        <li>
+            <div class="meetup">
+                <div class="date">
+                    <div class="month">
+                        @meetup.DateTime.ToString("MMM")
                     </div>
-                    <div class="game">
-                        <div class="details">
-                            @{
-                                var rpgGame = ((RpgGameType)meetup.RgpGameId).EnumDesc();
+                    <div class="day">
+                        @meetup.DateTime.ToString("d ")
+                    </div>
+                    <div class="year">
+                        @meetup.DateTime.ToString("yyyy")
+                    </div>
+                </div>
+                <div class="game">
+                    <div class="details">
+                        @{
+                            var rpgGame = ((RpgGameType)meetup.RgpGameId).EnumDesc();
+                        }
+                        <span class="rpgGame">@rpgGame</span>
+                    </div>
+                </div>
+                <div ng-controller="MeetupController" class="actions">
+                    <a href="@Url.Action("Edit","Meetup", new { id = meetup.Id })">
+                        Edit
+                    </a>|
+                    <a href="#" ng-click="cancelMeetup(@meetup.Id)">Cancel</a>
+                </div>
+            </div>
+        </li>
                             }
-                            <span class="rpgGame">@rpgGame</span>
-                        </div>
-                    </div>
-                    <div ng-controller="MeetupController" class="actions">
-                        <a href="@Url.Action("Edit","Meetup", new { id = meetup.Id })">
-                            Edit
-                        </a>|
-                        <a href="#" ng-click="cancelMeetup(@meetup.Id)">Cancel</a>
-                    </div>
-                 </div>
-            </li>
-     }
 </ul>

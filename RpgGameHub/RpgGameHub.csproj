@@ -220,29 +220,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607191815235_InitialCreation.cs" />
-    <Compile Include="Migrations\201607191815235_InitialCreation.Designer.cs">
-      <DependentUpon>201607191815235_InitialCreation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607192238363_AddHandle.cs" />
-    <Compile Include="Migrations\201607192238363_AddHandle.Designer.cs">
-      <DependentUpon>201607192238363_AddHandle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607210220090_AddMeetup.cs" />
-    <Compile Include="Migrations\201607210220090_AddMeetup.Designer.cs">
-      <DependentUpon>201607210220090_AddMeetup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607242013572_UpdateMeetup.cs" />
-    <Compile Include="Migrations\201607242013572_UpdateMeetup.Designer.cs">
-      <DependentUpon>201607242013572_UpdateMeetup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607242239457_IsCancelledField.cs" />
-    <Compile Include="Migrations\201607242239457_IsCancelledField.Designer.cs">
-      <DependentUpon>201607242239457_IsCancelledField.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607261902030_AddHandleToMeetup.cs" />
-    <Compile Include="Migrations\201607261902030_AddHandleToMeetup.Designer.cs">
-      <DependentUpon>201607261902030_AddHandleToMeetup.cs</DependentUpon>
+    <Compile Include="Migrations\201608031600486_CleanMigrationIncludingMeetupTable.cs" />
+    <Compile Include="Migrations\201608031600486_CleanMigrationIncludingMeetupTable.Designer.cs">
+      <DependentUpon>201608031600486_CleanMigrationIncludingMeetupTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\ViewModels\AccountViewModels.cs" />
@@ -335,23 +315,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607191815235_InitialCreation.resx">
-      <DependentUpon>201607191815235_InitialCreation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607192238363_AddHandle.resx">
-      <DependentUpon>201607192238363_AddHandle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607210220090_AddMeetup.resx">
-      <DependentUpon>201607210220090_AddMeetup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607242013572_UpdateMeetup.resx">
-      <DependentUpon>201607242013572_UpdateMeetup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607242239457_IsCancelledField.resx">
-      <DependentUpon>201607242239457_IsCancelledField.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607261902030_AddHandleToMeetup.resx">
-      <DependentUpon>201607261902030_AddHandleToMeetup.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608031600486_CleanMigrationIncludingMeetupTable.resx">
+      <DependentUpon>201608031600486_CleanMigrationIncludingMeetupTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

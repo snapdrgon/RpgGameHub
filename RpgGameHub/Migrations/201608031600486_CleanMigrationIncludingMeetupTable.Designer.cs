@@ -7,13 +7,13 @@ namespace RpgGameHub.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreation : IMigrationMetadata
+    public sealed partial class CleanMigrationIncludingMeetupTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreation));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CleanMigrationIncludingMeetupTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201607191815235_InitialCreation"; }
+            get { return "201608031600486_CleanMigrationIncludingMeetupTable"; }
         }
         
         string IMigrationMetadata.Source

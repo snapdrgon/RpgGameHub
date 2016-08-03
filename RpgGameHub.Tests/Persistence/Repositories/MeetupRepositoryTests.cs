@@ -37,13 +37,13 @@ namespace RpgGameHub.Tests.Persistence.Repositories
         }
 
         [TestMethod]
-        public void GetUpComingMeetups_GetMeetupMeetingCancelled_ShouldNotReturned()
+        public void GetUpComingMeetups_GetMeetupMeetingCancelled_ShouldbeReturned()
         {
             var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", IsCancelled = true };
             _mockMeetups.SetSource(new[] { meetup });
             mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
             var meetups = _repository.GetUpComingMeetups();
-            meetups.Should().BeEmpty();
+            meetups.Should().NotBeEmpty();
 
         }
 

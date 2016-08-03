@@ -2,7 +2,7 @@
 using System.Security.Principal;
 using System.Web.Http;
 
-namespace RpgGameHub.Tests.Persistence
+namespace RpgGameHub.Tests.Extensions
 {
     public static class ApiControllerExtensions
     {

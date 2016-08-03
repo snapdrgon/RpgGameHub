@@ -5,7 +5,7 @@ using RpgGameHub.Controllers.Api;
 using RpgGameHub.Core.Models;
 using RpgGameHub.Persistence;
 using RpgGameHub.Persistence.Repositories;
-using RpgGameHub.Tests.Persistence;
+using RpgGameHub.Tests.Extensions;
 using System.Web.Http.Results;
 
 namespace RpgGameHub.Tests.Controllers.Api

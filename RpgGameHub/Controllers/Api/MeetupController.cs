@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using RpgGameHub.Persistence;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 
 namespace RpgGameHub.Controllers.Api
@@ -31,6 +33,21 @@ namespace RpgGameHub.Controllers.Api
             _unitOfWork.Complete();
 
             return Ok();
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetMeetupDetails(int id)
+        {
+            var meetup = _unitOfWork.Meetups.GetMeetupDetails(id);
+            HttpResponseMessage response;
+
+            if (meetup == null || meetup.IsCancelled)
+                response = Request.CreateResponse(HttpStatusCode.NotFound, meetup);
+            else
+                response = Request.CreateResponse(HttpStatusCode.OK, meetup);
+
+            return response; //jump out
+
         }
     }
 }

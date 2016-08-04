@@ -1,4 +1,6 @@
-﻿using RpgGameHub.Core.Models;
+﻿using AutoMapper;
+using RpgGameHub.Core.Dtos;
+using RpgGameHub.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +35,12 @@ namespace RpgGameHub.Persistence.Repositories
             m.GamerId==userId);
             return meetup;
         }
+        public MeetupDto GetMeetupDetails(int id)
+        {
+            var meetup = _context.Meetups.SingleOrDefault(m => m.Id == id);
+            return Mapper.Map<Meetup, MeetupDto>(meetup);
+        }
+
         public void Add(Meetup meetup)
         {
             _context.Meetups.Add(meetup);

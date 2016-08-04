@@ -1,49 +1,39 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+  padding-bottom: 20px;
+  padding-top: 50px;
 }
-
-/* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
-.form-control:focus {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-.dropdown-menu {
-     -webkit-box-shadow: none; 
-     box-shadow: none; 
-}
-
-.btn {
-    border-radius: 8px;
-    -moz-border-radius:8px;
-}
-
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
 .form-control {
-    border-radius: 8px;
-    -moz-border-radius:8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
 }
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
+.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.dropdown-menu {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn {
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.dl-horizontal dt {
+  white-space: normal;
+}
+input {
+  max-width: 280px;
+}
+select {
+  max-width: 280px;
+}
 textarea {
-    max-width: 280px;
+  max-width: 280px;
 }
-
 .voffset {
   margin-top: 2px;
 }
@@ -62,163 +52,142 @@ textarea {
 .voffset5 {
   margin-top: 80px;
 }
-
 .meetups {
-    list-style:none;
+  list-style: none;
 }
-
-.meetups > li .meetup {
-    width:235px;
-    height:70px;
-}
-
-.meetups > li .meetup .date {
-  background-color:orange;
-  color: white;
-  text-align:center;
-  width: 80px;
-  border-radius: 8px;
-  -ms-border-radius: 8px;
-}
-
 .meetups li > .meetup .date .month {
-   text-transform: uppercase;
-
+  text-transform: uppercase;
 }
-
-.meetups li > .meetup .date .day {
-
-}
-.meetups li > .meetup .date .year {
-
-
-}
-
-.meetups > li .meetup .details {
-    position: relative;
-    top: -60px; 
-    left: 89px;
-    background-color:orange;
-    color: white;
-    text-align: center;
-    width: 141px;
-    height: 60px;
-    border-radius: 8px;
-    -ms-border-radius: 8px;
-}
-
 .meetups li > .meetup .details .rpgGame {
-    font-size:large;
-    font-weight:bold;
-
+  font-size: large;
+  font-weight: bold;
 }
 .meetups li > .meetup .details .gameMaster {
-    position:relative;
-    top:0;
-
+  position: relative;
+  top: 0;
 }
-
-.meetups > li .game .details {
-    position: relative;
-    top: -60px;
-    left: 89px;
-    background-color: orange;
-    color: white;
-    text-align: center;
-    width: 141px;
-    height: 36px;
-    border-radius: 8px;
-    -ms-border-radius: 8px;
+.meetups li > .meetup .actions {
+  -ms-border-radius: 8px;
+  background-color: orange;
+  border-radius: 8px;
+  color: white;
+  height: 21px;
+  left: 89px;
+  position: relative;
+  text-align: center;
+  top: -57px;
+  width: 141px;
 }
-
 .meetups li > .game .details .rpgGame {
-    font-size:large;
-    font-weight:bold;
-
+  font-size: large;
+  font-weight: bold;
 }
 .meetups li > .game .details .gameMaster {
-    position:relative;
-    top:0;
-
+  position: relative;
+  top: 0;
 }
-
-.meetups li > .meetup .actions {
-    position: relative;
-    top: -57px;
-    left: 89px;
-    background-color: orange;
-    color: white;
-    text-align: center;
-    width: 141px;
-    height: 21px;
-    border-radius: 8px;
-    -ms-border-radius: 8px;
+.meetups > li .meetup {
+  height: 70px;
+  width: 235px;
 }
-
-/*BootStrap Overrides*/
-
-body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+.meetups > li .meetup .date {
+  -ms-border-radius: 8px;
+  background-color: orange;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  width: 80px;
 }
-
+.meetups > li .meetup .details {
+  -ms-border-radius: 8px;
+  background-color: orange;
+  border-radius: 8px;
+  color: white;
+  height: 60px;
+  left: 89px;
+  position: relative;
+  text-align: center;
+  top: -60px;
+  width: 141px;
+}
+.meetups > li .game .details {
+  -ms-border-radius: 8px;
+  background-color: orange;
+  border-radius: 8px;
+  color: white;
+  height: 36px;
+  left: 89px;
+  position: relative;
+  text-align: center;
+  top: -60px;
+  width: 141px;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 .navbar-inverse {
-    background-color: #0094ff;
-    border-color: #0094ff;
+  background-color: #0094ff;
+  border-color: #0094ff;
 }
-
 .navbar-inverse .navbar-nav > li > a {
-    color: #fff;
+  color: #ffffff;
 }
-
 .navbar-inverse .navbar-brand {
-    color: #fff;
+  color: #ffffff;
 }
-
-.navbar-fixed-top {
-    min-height: 80px;
+.navbar-inverse .navbar-nav > .open > a {
+  background-color: #555be6;
 }
-
-.navbar-nav > li > a {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    line-height: 80px;    
-    font-size: 24px
+.navbar-inverse .navbar-nav > .open > a:hover {
+  background-color: #555be6;
 }
-
-.navbar-brand {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    line-height: 80px;
-    font-size: 24px
-
-}
-
-.navbar-inverse .navbar-nav > .open > a,
- .navbar-inverse .navbar-nav > .open > a:hover, 
 .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #555be6;
+  background-color: #555be6;
 }
-
 .navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
-    border-top-color: #ffffff;
-    border-bottom-color: #ffffff;
+  border-bottom-color: #ffffff;
+  border-top-color: #ffffff;
 }
-
 .navbar-inverse .navbar-nav > .dropdown > a .caret {
-    border-top-color:white;
-    border-bottom-color:white;
+  border-bottom-color: white;
+  border-top-color: white;
 }
-
+.navbar-fixed-top {
+  min-height: 80px;
+}
+.navbar-nav > li > a {
+  font-size: 24px;
+  line-height: 80px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.navbar-brand {
+  font-size: 24px;
+  line-height: 80px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
 span.field-validation-error {
-    color: red;
-    font-weight: bold;
+  color: red;
+  font-weight: bold;
 }
-
 .badge {
-    position: relative;
-    top: -98px;
-    left: 114px;
-    font-size: 15px;
-    background-color: orangered;
-    border-radius: 8px;
+  background-color: orangered;
+  border-radius: 8px;
+  font-size: 15px;
+  left: 114px;
+  position: relative;
+  top: -98px;
 }

@@ -1,0 +1,215 @@
+﻿// Color variables (appears count calculates by raw css)
+@color0: #ffffff; // Appears 4 times
+@color1: #555be6; // Appears 3 times
+@color2: #0094ff; // Appears 2 times
+
+// Width variables (appears count calculates by raw css)
+@width1: 141px; // Appears 3 times
+@width2: 280px; // Appears 3 times
+
+
+body {
+	padding-bottom: 20px;
+	padding-top: 50px;
+}
+.body-content {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.form-control {
+	-moz-border-radius:8px;
+	border-radius: 8px;
+	&:focus {
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+}
+.dropdown-menu {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.btn {
+	-moz-border-radius:8px;
+	border-radius: 8px;
+}
+.dl-horizontal {
+	dt {
+		white-space: normal;
+	}
+}
+input {
+	max-width: @width2;
+}
+select {
+	max-width: @width2;
+}
+textarea {
+	max-width: @width2;
+}
+.voffset {
+	margin-top: 2px;
+}
+.voffset1 {
+	margin-top: 5px;
+}
+.voffset2 {
+	margin-top: 10px;
+}
+.voffset3 {
+	margin-top: 20px;
+}
+.voffset4 {
+	margin-top: 40px;
+}
+.voffset5 {
+	margin-top: 80px;
+}
+.meetups {
+	list-style:none;
+	li>.meetup {
+		.date {
+			.month {
+				text-transform: uppercase;
+			}
+			.day {
+			}
+			.year {
+			}
+		}
+		.details {
+			.rpgGame {
+				font-size:large;
+				font-weight:bold;
+			}
+			.gameMaster {
+				position:relative;
+				top:0;
+			}
+		}
+		.actions {
+			-ms-border-radius: 8px;
+			background-color: orange;
+			border-radius: 8px;
+			color: white;
+			height: 21px;
+			left: 89px;
+			position: relative;
+			text-align: center;
+			top: -57px;
+			width: @width1;
+		}
+	}
+	li>.game {
+		.details {
+			.rpgGame {
+				font-size:large;
+				font-weight:bold;
+			}
+			.gameMaster {
+				position:relative;
+				top:0;
+			}
+		}
+	}
+}
+.meetups>li {
+	.meetup {
+		height:70px;
+		width:235px;
+		.date {
+			-ms-border-radius: 8px;
+			background-color:orange;
+			border-radius: 8px;
+			color: white;
+			text-align:center;
+			width: 80px;
+		}
+		.details {
+			-ms-border-radius: 8px;
+			background-color:orange;
+			border-radius: 8px;
+			color: white;
+			height: 60px;
+			left: 89px;
+			position: relative;
+			text-align: center;
+			top: -60px;
+			width: @width1;
+		}
+	}
+	.game {
+		.details {
+			-ms-border-radius: 8px;
+			background-color: orange;
+			border-radius: 8px;
+			color: white;
+			height: 36px;
+			left: 89px;
+			position: relative;
+			text-align: center;
+			top: -60px;
+			width: @width1;
+		}
+	}
+}
+body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
+	font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.navbar-inverse {
+	background-color: @color2;
+	border-color: @color2;
+	.navbar-nav>li>a {
+		color: @color0;
+	}
+	.navbar-brand {
+		color: @color0;
+	}
+	.navbar-nav>.open>a {
+		background-color: @color1;
+		&:hover {
+			background-color: @color1;
+		}
+		&:focus {
+			background-color: @color1;
+		}
+	}
+	.navbar-nav>.dropdown>a {
+		&:hover {
+			.caret {
+				border-bottom-color: @color0;
+				border-top-color: @color0;
+			}
+		}
+		.caret {
+			border-bottom-color:white;
+			border-top-color:white;
+		}
+	}
+}
+.navbar-fixed-top {
+	min-height: 80px;
+}
+.navbar-nav>li>a {
+	font-size: 24px;
+	line-height: 80px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+.navbar-brand {
+	font-size: 24px;
+	line-height: 80px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+span.field-validation-error {
+	color: red;
+	font-weight: bold;
+}
+.badge {
+	background-color: orangered;
+	border-radius: 8px;
+	font-size: 15px;
+	left: 114px;
+	position: relative;
+	top: -98px;
+}

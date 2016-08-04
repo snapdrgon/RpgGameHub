@@ -1,4 +1,5 @@
-﻿using RpgGameHub.Core.Models;
+﻿using RpgGameHub.Core.Dtos;
+using RpgGameHub.Core.Models;
 using System.Collections.Generic;
 
 namespace RpgGameHub.Persistence.Repositories
@@ -11,5 +12,7 @@ namespace RpgGameHub.Persistence.Repositories
 
         IEnumerable<Meetup> GetUpComingMeetupsByGameMaster(string userId);
         Meetup GetSingleMeetupAssociatedWithGameMaster(int id, string userId);
+
+        MeetupDto GetMeetupDetails(int id);
     }
 }

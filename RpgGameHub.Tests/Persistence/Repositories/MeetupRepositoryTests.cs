@@ -1,6 +1,8 @@
-﻿using FluentAssertions;
+﻿using AutoMapper;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using RpgGameHub.Core.Dtos;
 using RpgGameHub.Core.Models;
 using RpgGameHub.Persistence;
 using RpgGameHub.Persistence.Repositories;
@@ -23,6 +25,7 @@ namespace RpgGameHub.Tests.Persistence.Repositories
             mockContext = new Mock<IApplicationDbContext>();
             mockContext.SetupGet(c => c.Meetups).Returns(_mockMeetups.Object);
             _repository = new MeetupRepository(mockContext.Object);
+            Mapper.CreateMap<Meetup, MeetupDto>();
 
         }
         [TestMethod]
@@ -100,6 +103,41 @@ namespace RpgGameHub.Tests.Persistence.Repositories
             meetups.Should().BeNull();
 
         }
+
+        [TestMethod]
+        public void GetMeetupDetails_ValidMeetup_ShouldNotBeEmpty()
+        {
+            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", Id = 1 };
+            _mockMeetups.SetSource(new[] { meetup });
+            mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
+            var meetups = _repository.GetMeetupDetails(1);
+            meetups.Should().NotBeNull();
+
+        }
+
+        [TestMethod]
+        public void GetMeetupDetails_InValidMeetup_ShouldBeEmpty()
+        {
+            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", Id = 1 };
+            _mockMeetups.SetSource(new[] { meetup });
+            mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
+            var meetups = _repository.GetMeetupDetails(2);
+            meetups.Should().BeNull();
+        }
+
+        [TestMethod]
+        public void GetMeetupDetails_ValidMeetup_ShouldReturnMeetupDto()
+        {
+            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", Id = 1, Handle="stuff", Details="more stuff" };
+            _mockMeetups.SetSource(new[] { meetup });
+            mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
+            var meetups = _repository.GetMeetupDetails(1);
+            meetups.Should().BeOfType<MeetupDto>();
+        }
+
+
+
+
 
 
     }

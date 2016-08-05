@@ -12,16 +12,18 @@
     {
         <li>
             <div class="meetup">
-                <div class="date">
-                    <div class="month">
-                        @meetup.DateTime.ToString("MMM")
-                    </div>
-                    <div class="day">
-                        @meetup.DateTime.ToString("d ")
-                    </div>
-                    <div class="year">
-                        @meetup.DateTime.ToString("yyyy")
-                    </div>
+                <div class="date" >
+                    <a class="detail_link" href="@Url.Action("Details", "Meetup", new { Id = meetup.Id } )">
+                        <div class="month">
+                            @meetup.DateTime.ToString("MMM")
+                        </div>
+                        <div class="day">
+                            @meetup.DateTime.ToString("d ")
+                        </div>
+                        <div class="year">
+                            @meetup.DateTime.ToString("yyyy")
+                        </div>
+                    </a>
                 </div>
                 <div class="details">
                     @{

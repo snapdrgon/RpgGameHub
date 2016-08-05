@@ -38,6 +38,18 @@ namespace RpgGameHub.Controllers
             return View(meetups);
         }
 
+        public ActionResult Details(int id)
+        {
+            //this pretty much just a pass thru to make MVC happy
+            var viewModel = new DetailViewModel
+            {
+                id = id,
+                Heading = "Meetup Details"
+            };
+
+            return View(viewModel);
+        }
+
 
         [Authorize]
         [HttpPost]

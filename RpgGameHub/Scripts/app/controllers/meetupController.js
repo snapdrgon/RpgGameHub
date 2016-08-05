@@ -3,7 +3,6 @@
     var module = angular.module('meetupApp');
 
     var MeetupController = function ($scope, rpgGameHub) {
-
         $scope.cancelMeetup = function (rpgGameId) {
             $scope.gameId = rpgGameId; //do this so we can pass further down
             bootbox.dialog({
@@ -27,6 +26,15 @@
                     }
                 }
             });
+        };
+
+        $scope.getMeetupDetail = function (rpgGameId) {
+            rpgGameHub.getMeetupDetail(rpgGameId)
+                .then(onDetail, onError);
+        };
+
+        var onDetail = function (response) {
+            $scope.meetup = response;
         };
 
          var onCancel = function (response) {

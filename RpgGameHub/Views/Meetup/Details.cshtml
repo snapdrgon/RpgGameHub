@@ -1,0 +1,14 @@
+﻿@model RpgGameHub.Core.ViewModels.DetailViewModel
+
+@{
+    ViewBag.Title = Model.Heading;
+}
+
+<h2>@Model.Heading</h2>
+
+<div class="details" ng-controller="MeetupController">
+<span ng-init="getMeetupDetail(@Model.id)"></span>
+    {{meetup.handle}}
+
+</div>
+

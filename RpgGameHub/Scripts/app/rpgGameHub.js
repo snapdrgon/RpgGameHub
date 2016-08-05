@@ -10,8 +10,17 @@
                     return response.data;
                 });
         };
+
+        var getMeetupDetail = function (rpgGameId) {
+            var url = '/api/meetup/' + rpgGameId;
+            return $http.get(url)
+            .then(function (response) {
+                return response.data;
+            });
+        }
         return {
-            cancelMeetup: cancelMeetup
+            cancelMeetup: cancelMeetup,
+            getMeetupDetail: getMeetupDetail
         };
     };
     var module = angular.module("meetupApp");

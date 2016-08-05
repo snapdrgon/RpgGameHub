@@ -41,7 +41,7 @@ namespace RpgGameHub.Controllers.Api
             var meetup = _unitOfWork.Meetups.GetMeetupDetails(id);
             HttpResponseMessage response;
 
-            if (meetup == null || meetup.IsCancelled)
+            if (meetup == null)
                 response = Request.CreateResponse(HttpStatusCode.NotFound, meetup);
             else
                 response = Request.CreateResponse(HttpStatusCode.OK, meetup);

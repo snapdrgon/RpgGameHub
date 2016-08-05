@@ -212,6 +212,7 @@
     <Compile Include="Core\Dtos\MeetupDto.cs" />
     <Compile Include="Core\Models\Meetup.cs" />
     <Compile Include="Core\Models\RpgGameType.cs" />
+    <Compile Include="Core\ViewModels\DetailViewModel.cs" />
     <Compile Include="Core\ViewModels\FutureDate.cs" />
     <Compile Include="Core\ViewModels\MeetupFormViewModel.cs" />
     <Compile Include="Core\ViewModels\MeetupViewModel.cs" />
@@ -318,6 +319,7 @@
     <Content Include="Views\Meetup\MeetupForm.cshtml" />
     <Content Include="Views\Shared\Meetups.cshtml" />
     <Content Include="Views\Meetup\Mine.cshtml" />
+    <Content Include="Views\Meetup\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

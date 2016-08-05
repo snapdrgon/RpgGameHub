@@ -12,17 +12,19 @@
     @foreach (var meetup in Model)
     {
         <li>
-            <div class="meetup">
+            <div class="meetup" ng-controller="MeetupController">
                 <div class="date">
-                    <div class="month">
-                        @meetup.DateTime.ToString("MMM")
-                    </div>
-                    <div class="day">
-                        @meetup.DateTime.ToString("d ")
-                    </div>
-                    <div class="year">
-                        @meetup.DateTime.ToString("yyyy")
-                    </div>
+                    <a class="detail_link" href="@Url.Action("Details", "Meetup", new { Id = meetup.Id } )">
+                        <div class="month">
+                            @meetup.DateTime.ToString("MMM")
+                        </div>
+                        <div class="day">
+                            @meetup.DateTime.ToString("d ")
+                        </div>
+                        <div class="year">
+                            @meetup.DateTime.ToString("yyyy")
+                        </div>
+                    </a>
                 </div>
                 <div class="game">
                     <div class="details">
@@ -32,7 +34,7 @@
                         <span class="rpgGame">@rpgGame</span>
                     </div>
                 </div>
-                <div ng-controller="MeetupController" class="actions">
+                <div class="actions">
                     <a href="@Url.Action("Edit","Meetup", new { id = meetup.Id })">
                         Edit
                     </a>|

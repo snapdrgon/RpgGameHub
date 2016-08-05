@@ -55,6 +55,10 @@ textarea {
 .meetups {
   list-style: none;
 }
+.meetups li > .meetup .date .detail_link {
+  color: white;
+  text-decoration: none;
+}
 .meetups li > .meetup .date .month {
   text-transform: uppercase;
 }

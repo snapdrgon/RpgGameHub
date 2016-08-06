@@ -30,8 +30,12 @@ namespace RpgGameHub
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/bootstrap-theme.css",
+                      "~/Content/bootstrap-theme.css.map",
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.css.map",
                       "~/Content/site.css"));
         }
     }

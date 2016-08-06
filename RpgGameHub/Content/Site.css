@@ -141,35 +141,39 @@ h6,
 .h6 {
   font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.navbar-inverse {
+.navbar-fixed-top {
+  min-height: 80px;
+}
+.navbar-collapse {
   background-color: #0094ff;
   border-color: #0094ff;
 }
-.navbar-inverse .navbar-nav > li > a {
-  color: #ffffff;
-}
-.navbar-inverse .navbar-brand {
-  color: #ffffff;
+.navbar-inverse {
+  background-color: #0094ff;
+  background-image: none;
+  border-color: #0094ff;
 }
 .navbar-inverse .navbar-nav > .open > a {
   background-color: #555be6;
+  background-image: none;
+  color: #ffffff;
 }
 .navbar-inverse .navbar-nav > .open > a:hover {
   background-color: #555be6;
+  color: #ffffff;
 }
 .navbar-inverse .navbar-nav > .open > a:focus {
   background-color: #555be6;
+  color: #ffffff;
 }
-.navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
-  border-bottom-color: #ffffff;
-  border-top-color: #ffffff;
+.navbar-inverse .navbar-nav > .active > a {
+  background-image: none;
 }
-.navbar-inverse .navbar-nav > .dropdown > a .caret {
-  border-bottom-color: white;
-  border-top-color: white;
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
 }
-.navbar-fixed-top {
-  min-height: 80px;
+.navbar-inverse .navbar-brand {
+  color: white;
 }
 .navbar-nav > li > a {
   font-size: 24px;

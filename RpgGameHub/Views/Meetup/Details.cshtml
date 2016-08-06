@@ -15,10 +15,10 @@
     </div>
     <div class="dateTime">
         <div ng-if="!meetup.isCancelled">
-            <div  class="alert alert-info">{{meetup.handle}} will be running the meetup on {{meetup.date}} at {{meetup.time}}.</div> 
+            <div  class="bg-info">{{meetup.handle}} will be running the meetup on {{meetup.date}} at {{meetup.time}}.</div> 
         </div>
         <div ng-if="meetup.isCancelled">
-            <div class="alert alert-warning"> {{meetup.handle}} has cancelled the meetup scheduled for {{meetup.date}} at {{meetup.time}}.</div>
+            <div class="bg-warning"> {{meetup.handle}} has cancelled the meetup scheduled for {{meetup.date}} at {{meetup.time}}.</div>
         </div>
     </div>
     <div>

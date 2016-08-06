@@ -1,7 +1,7 @@
 ﻿// Color variables (appears count calculates by raw css)
-@color0: #ffffff; // Appears 4 times
-@color1: #555be6; // Appears 3 times
-@color2: #0094ff; // Appears 2 times
+@color0: #0094ff; // Appears 4 times
+@color1: #ffffff; // Appears 3 times
+@color2: #555be6; // Appears 3 times
 
 // Width variables (appears count calculates by raw css)
 @width1: 141px; // Appears 3 times
@@ -16,9 +16,8 @@ body {
 	padding-left: 15px;
 	padding-right: 15px;
 }
-
 .form-control {
-	-moz-border-radius:8px;
+	-moz-border-radius: 8px;
 	border-radius: 8px;
 	&:focus {
 		-webkit-box-shadow: none;
@@ -30,7 +29,7 @@ body {
 	box-shadow: none;
 }
 .btn {
-	-moz-border-radius:8px;
+	-moz-border-radius: 8px;
 	border-radius: 8px;
 }
 .dl-horizontal {
@@ -66,29 +65,25 @@ textarea {
 	margin-top: 80px;
 }
 .meetups {
-	list-style:none;
+	list-style: none;
 	li>.meetup {
 		.date {
-            .detail_link {
-                color:white;
-                text-decoration:none;
-            }
+			.detail_link {
+				color: white;
+				text-decoration: none;
+			}
 			.month {
 				text-transform: uppercase;
-			}
-			.day {
-			}
-			.year {
 			}
 		}
 		.details {
 			.rpgGame {
-				font-size:large;
-				font-weight:bold;
+				font-size: large;
+				font-weight: bold;
 			}
 			.gameMaster {
-				position:relative;
-				top:0;
+				position: relative;
+				top: 0;
 			}
 		}
 		.actions {
@@ -107,31 +102,31 @@ textarea {
 	li>.game {
 		.details {
 			.rpgGame {
-				font-size:large;
-				font-weight:bold;
+				font-size: large;
+				font-weight: bold;
 			}
 			.gameMaster {
-				position:relative;
-				top:0;
+				position: relative;
+				top: 0;
 			}
 		}
 	}
 }
 .meetups>li {
 	.meetup {
-		height:70px;
-		width:235px;
+		height: 70px;
+		width: 235px;
 		.date {
 			-ms-border-radius: 8px;
-			background-color:orange;
+			background-color: orange;
 			border-radius: 8px;
 			color: white;
-			text-align:center;
+			text-align: center;
 			width: 80px;
 		}
 		.details {
 			-ms-border-radius: 8px;
-			background-color:orange;
+			background-color: orange;
 			border-radius: 8px;
 			color: white;
 			height: 60px;
@@ -157,42 +152,42 @@ textarea {
 		}
 	}
 }
-body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
 	font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.navbar-inverse {
-	background-color: @color2;
-	border-color: @color2;
-	.navbar-nav>li>a {
-		color: @color0;
-	}
-	.navbar-brand {
-		color: @color0;
-	}
-	.navbar-nav>.open>a {
-		background-color: @color1;
-		&:hover {
-			background-color: @color1;
-		}
-		&:focus {
-			background-color: @color1;
-		}
-	}
-	.navbar-nav>.dropdown>a {
-		&:hover {
-			.caret {
-				border-bottom-color: @color0;
-				border-top-color: @color0;
-			}
-		}
-		.caret {
-			border-bottom-color:white;
-			border-top-color:white;
-		}
-	}
 }
 .navbar-fixed-top {
 	min-height: 80px;
+}
+.navbar-collapse {
+	background-color: @color0;
+	border-color: @color0;
+}
+.navbar-inverse {
+	background-color: @color0;
+	background-image: none;
+	border-color: @color0;
+	.navbar-nav>.open>a {
+		background-color: @color2;
+		background-image: none;
+		color: @color1;
+		&:hover {
+			background-color: @color2;
+			color: @color1;
+		}
+		&:focus {
+			background-color: @color2;
+			color: @color1;
+		}
+	}
+	.navbar-nav>.active>a {
+		background-image: none;
+	}
+	.navbar-nav>li>a {
+		color: white;
+	}
+	.navbar-brand {
+		color: white;
+	}
 }
 .navbar-nav>li>a {
 	font-size: 24px;
@@ -209,7 +204,7 @@ body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
 span.field-validation-error {
 	color: red;
 	font-weight: bold;
-}
+} 
 .badge {
 	background-color: orangered;
 	border-radius: 8px;

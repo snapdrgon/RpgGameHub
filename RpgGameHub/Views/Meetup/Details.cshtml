@@ -1,4 +1,5 @@
 ﻿@model RpgGameHub.Core.ViewModels.DetailViewModel
+@using RpgGameHub.Extensions
 
 @{
     ViewBag.Title = Model.Heading;
@@ -6,9 +7,25 @@
 
 <h2>@Model.Heading</h2>
 
-<div class="details" ng-controller="MeetupController">
-<span ng-init="getMeetupDetail(@Model.id)"></span>
-    {{meetup.handle}}
+<div class="details voffset3" ng-controller="MeetupController">
+    <span ng-init="getMeetupDetail(@Model.id)"></span>
 
+    <div class="gameName">
+        <a href="{{meetup.url}}" target="_blank">{{meetup.rgpGameName}}</a>
+    </div>
+    <div class="dateTime">
+        <div ng-if="!meetup.isCancelled">
+            <div  class="alert alert-info">{{meetup.handle}} will be running the meetup on {{meetup.date}} at {{meetup.time}}.</div> 
+        </div>
+        <div ng-if="meetup.isCancelled">
+            <div class="alert alert-warning"> {{meetup.handle}} has cancelled the meetup scheduled for {{meetup.date}} at {{meetup.time}}.</div>
+        </div>
+    </div>
+    <div>
+        {{meetup.details}}
+    </div>
+    <div>
+        {{meetup.hub}}
+    </div>
 </div>
-
+ 

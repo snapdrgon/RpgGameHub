@@ -211,6 +211,7 @@
     <Compile Include="Core\Common\SharedTools.cs" />
     <Compile Include="Core\Dtos\MeetupDto.cs" />
     <Compile Include="Core\Models\Meetup.cs" />
+    <Compile Include="Core\Models\RpgGameRef.cs" />
     <Compile Include="Core\Models\RpgGameType.cs" />
     <Compile Include="Core\ViewModels\DetailViewModel.cs" />
     <Compile Include="Core\ViewModels\FutureDate.cs" />
@@ -230,6 +231,10 @@
     <Compile Include="Migrations\201608031837468_AddHubFieldToMeetupTable.cs" />
     <Compile Include="Migrations\201608031837468_AddHubFieldToMeetupTable.Designer.cs">
       <DependentUpon>201608031837468_AddHubFieldToMeetupTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608052044040_AddRpgGameRefTable.cs" />
+    <Compile Include="Migrations\201608052044040_AddRpgGameRefTable.Designer.cs">
+      <DependentUpon>201608052044040_AddRpgGameRefTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\ViewModels\AccountViewModels.cs" />
@@ -338,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608031837468_AddHubFieldToMeetupTable.resx">
       <DependentUpon>201608031837468_AddHubFieldToMeetupTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608052044040_AddRpgGameRefTable.resx">
+      <DependentUpon>201608052044040_AddRpgGameRefTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -107,7 +107,7 @@ namespace RpgGameHub.Tests.Persistence.Repositories
         [TestMethod]
         public void GetMeetupDetails_ValidMeetup_ShouldNotBeEmpty()
         {
-            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", Id = 1 };
+            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", Id = 1 , RgpGameId=2};
             _mockMeetups.SetSource(new[] { meetup });
             mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
             var meetups = _repository.GetMeetupDetails(1);

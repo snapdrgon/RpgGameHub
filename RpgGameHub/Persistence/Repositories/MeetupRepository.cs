@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using RpgGameHub.Core.Dtos;
 using RpgGameHub.Core.Models;
+using RpgGameHub.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,15 @@ namespace RpgGameHub.Persistence.Repositories
         public MeetupDto GetMeetupDetails(int id)
         {
             var meetup = _context.Meetups.SingleOrDefault(m => m.Id == id);
-            return Mapper.Map<Meetup, MeetupDto>(meetup);
+            var gameUrl = _context.RpgGameRefs.Where(g => g.RpgGameId == meetup.RgpGameId)
+                .Select(g => g.Url).ToList(); //yes I know it's ugly, but it will work for now
+            //intermediate step to set the RgpGameName, Date, Time and Url based on the RpgGameId
+            var meetupDto = Mapper.Map<Meetup, MeetupDto>(meetup);
+            meetupDto.Date = meetup.DateTime.ToString("d MMM yyyy");
+            meetupDto.Time = meetup.DateTime.ToString("HH:mm");
+            meetupDto.Url = gameUrl[0]; //ugly .. need to change
+            meetupDto.RgpGameName = ((RpgGameType)meetup.RgpGameId).EnumDesc();
+            return meetupDto;
         }
 
         public void Add(Meetup meetup)

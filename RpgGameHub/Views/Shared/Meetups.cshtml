@@ -27,7 +27,7 @@
                 </div>
                 <div class="details">
                     @{
-                        var rpgGame = ((RpgGameType)meetup.RgpGameId).EnumDesc();
+                        var rpgGame = ((RpgGameType)meetup.RgpGameId);
                     }
                     <span class="rpgGame">@rpgGame</span>
                     <div class="gameMaster">@meetup.Handle</div>

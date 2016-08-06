@@ -7,6 +7,7 @@ namespace RpgGameHub.Persistence
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
     {
         public DbSet<Meetup> Meetups { get; set; }
+        public DbSet<RpgGameRef> RpgGameRefs { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

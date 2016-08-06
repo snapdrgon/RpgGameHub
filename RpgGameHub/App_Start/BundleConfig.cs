@@ -17,6 +17,7 @@ namespace RpgGameHub
             bundles.Add(new ScriptBundle("~/bundles/lib").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.min.js",
+                         "~/Scripts/respond.js",
                         "~/Scripts/bootbox.min.js",
                         "~/Scripts/angular.min.js"
                         ));
@@ -28,10 +29,6 @@ namespace RpgGameHub
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
-
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

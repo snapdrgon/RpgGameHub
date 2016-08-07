@@ -5,27 +5,41 @@
     ViewBag.Title = Model.Heading;
 }
 
-<h2>@Model.Heading</h2>
+<h1>@Model.Heading</h1>
 
-<div class="details voffset3" ng-controller="MeetupController">
+<hr />
+
+<div class="meetupDetails voffset4" ng-controller="MeetupController">
     <span ng-init="getMeetupDetail(@Model.id)"></span>
-
-    <div class="gameName">
-        <a href="{{meetup.url}}" target="_blank">{{meetup.rgpGameName}}</a>
+    <div class="voffset2">
+        <text class="text-info gameName">
+                <a class="game_link" href="{{meetup.url}}" target="_blank">{{meetup.rgpGameName}}</a>
+        </text>
     </div>
-    <div class="dateTime">
+    <div class="dateTime voffset3">
+        <label class="label label-default label-meetup">Meetup Info:</label>
         <div ng-if="!meetup.isCancelled">
-            <div  class="bg-info">{{meetup.handle}} will be running the meetup on {{meetup.date}} at {{meetup.time}}.</div> 
+            <text class="text-info">{{meetup.handle}} will be running the meetup on {{meetup.date}} at {{meetup.time}}.</text>
         </div>
         <div ng-if="meetup.isCancelled">
-            <div class="bg-danger"> {{meetup.handle}} has cancelled the meetup scheduled for {{meetup.date}} at {{meetup.time}}.</div>
+            <text class="text-danger"> {{meetup.handle}} has cancelled the meetup scheduled for {{meetup.date}} at {{meetup.time}}.</text>
         </div>
     </div>
     <div>
-        {{meetup.details}}
+        <label class="label label-default label-meetup voffset3">This and that:</label>
+        <div>
+            <text class="text-info ">
+                {{meetup.details}}
+            </text>
+        </div>
     </div>
     <div>
-        {{meetup.hub}}
+        <label class="label label-default label-meetup voffset3">Hub Info:</label>
+        <div>
+            <text class="text-info">
+                {{meetup.hub}}
+            </text>
+        </div>
     </div>
 </div>
- 
+

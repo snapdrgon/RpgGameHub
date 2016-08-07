@@ -126,6 +126,25 @@ textarea {
   top: -60px;
   width: 141px;
 }
+.meetupDetails {
+  font-size: 20px;
+}
+.gameName {
+  font-size: 24px;
+  -ms-border-radius: 8px;
+  background-color: orange;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  border-spacing: 20px;
+}
+.gameName .game_link {
+  color: white;
+  text-decoration: none;
+}
+.label-meetup {
+  background-color: #0094ff;
+}
 body,
 h1,
 h2,

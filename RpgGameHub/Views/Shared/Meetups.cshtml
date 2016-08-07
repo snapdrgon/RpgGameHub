@@ -5,7 +5,9 @@
     ViewBag.Title = @Model.Heading;
 }
 
-<h2>@Model.Heading</h2>
+<h1>@Model.Heading</h1>
+
+<hr />
 
 <ul id="meetups" class="meetups voffset4">
     @foreach (var meetup in Model.upcomingMeetups)

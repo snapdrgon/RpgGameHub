@@ -39,6 +39,8 @@ namespace RpgGameHub.Persistence.Repositories
         public MeetupDto GetMeetupDetails(int id)
         {
             var meetup = _context.Meetups.SingleOrDefault(m => m.Id == id);
+            if (meetup == null) //if null then no reason to continue
+                return (MeetupDto)null; //head for Dodge
             var gameUrl = _context.RpgGameRefs.Where(g => g.RpgGameId == meetup.RgpGameId)
                 .Select(g => g.Url).ToList(); //yes I know it's ugly, but it will work for now
             //intermediate step to set the RgpGameName, Date, Time and Url based on the RpgGameId

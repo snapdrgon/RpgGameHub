@@ -36,6 +36,7 @@ namespace RpgGameHub.Controllers.Api
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public HttpResponseMessage GetMeetupDetails(int id)
         {
             var meetup = _unitOfWork.Meetups.GetMeetupDetails(id);

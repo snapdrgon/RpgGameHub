@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNet.Identity;
-using RpgGameHub.Core.ViewModels;
+﻿using RpgGameHub.Core.ViewModels;
 using RpgGameHub.Persistence;
 using System.Web.Mvc;
 
@@ -16,7 +15,6 @@ namespace RpgGameHub.Controllers
         }
         public ActionResult Index()
         {
-            var userId = User.Identity.GetUserId();
             var upcomingMeetups = _unitOfWork.Meetups.GetUpComingMeetups();
 
             var viewModel = new MeetupViewModel

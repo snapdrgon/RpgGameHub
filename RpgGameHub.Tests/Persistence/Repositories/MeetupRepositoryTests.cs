@@ -18,10 +18,12 @@ namespace RpgGameHub.Tests.Persistence.Repositories
         private MeetupRepository _repository;
         private Mock<IApplicationDbContext> mockContext;
         private Mock<DbSet<Meetup>> _mockMeetups { get; set; }
+        public Mock<DbSet<RpgGameRef>> _mockRpgGameRef { get; set; }
         [TestInitialize]
         public void TestInitialize()
         {
             _mockMeetups = new Mock<DbSet<Meetup>>();
+            _mockRpgGameRef = new Mock<DbSet<RpgGameRef>>();
             mockContext = new Mock<IApplicationDbContext>();
             mockContext.SetupGet(c => c.Meetups).Returns(_mockMeetups.Object);
             _repository = new MeetupRepository(mockContext.Object);
@@ -110,6 +112,9 @@ namespace RpgGameHub.Tests.Persistence.Repositories
             var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", Id = 1 , RgpGameId=2};
             _mockMeetups.SetSource(new[] { meetup });
             mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
+            var rpgGameRef = new RpgGameRef() { RpgGameId = 2, Url = "hi" };
+            _mockRpgGameRef.SetSource(new[] { rpgGameRef });
+            mockContext.Setup(c => c.RpgGameRefs).Returns(_mockRpgGameRef.Object);
             var meetups = _repository.GetMeetupDetails(1);
             meetups.Should().NotBeNull();
 
@@ -118,9 +123,12 @@ namespace RpgGameHub.Tests.Persistence.Repositories
         [TestMethod]
         public void GetMeetupDetails_InValidMeetup_ShouldBeEmpty()
         {
-            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", Id = 1 };
+            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", Id = 1 , RgpGameId=1};
             _mockMeetups.SetSource(new[] { meetup });
             mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
+            var rpgGameRef = new RpgGameRef() { RpgGameId = 1, Url = "hi" };
+            _mockRpgGameRef.SetSource(new[] { rpgGameRef });
+            mockContext.Setup(c => c.RpgGameRefs).Returns(_mockRpgGameRef.Object);
             var meetups = _repository.GetMeetupDetails(2);
             meetups.Should().BeNull();
         }
@@ -128,9 +136,12 @@ namespace RpgGameHub.Tests.Persistence.Repositories
         [TestMethod]
         public void GetMeetupDetails_ValidMeetup_ShouldReturnMeetupDto()
         {
-            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", Id = 1, Handle="stuff", Details="more stuff" };
+            var meetup = new Meetup() { DateTime = DateTime.Now.AddDays(1), GamerId = "1", Id = 1, Handle="stuff", Details="more stuff", RgpGameId=2 };
             _mockMeetups.SetSource(new[] { meetup });
             mockContext.Setup(c => c.Meetups).Returns(_mockMeetups.Object);
+            var rpgGameRef = new RpgGameRef() { RpgGameId = 2, Url = "hi" };
+            _mockRpgGameRef.SetSource(new[] { rpgGameRef });
+            mockContext.Setup(c => c.RpgGameRefs).Returns(_mockRpgGameRef.Object);
             var meetups = _repository.GetMeetupDetails(1);
             meetups.Should().BeOfType<MeetupDto>();
         }

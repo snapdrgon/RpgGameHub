@@ -210,6 +210,7 @@
     <Compile Include="Controllers\MeetupController.cs" />
     <Compile Include="Core\Common\SharedTools.cs" />
     <Compile Include="Core\Dtos\MeetupDto.cs" />
+    <Compile Include="Core\Models\GameFan.cs" />
     <Compile Include="Core\Models\Meetup.cs" />
     <Compile Include="Core\Models\RpgGameRef.cs" />
     <Compile Include="Core\Models\RpgGameType.cs" />
@@ -235,6 +236,10 @@
     <Compile Include="Migrations\201608052044040_AddRpgGameRefTable.cs" />
     <Compile Include="Migrations\201608052044040_AddRpgGameRefTable.Designer.cs">
       <DependentUpon>201608052044040_AddRpgGameRefTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608072334348_AddGameFansTable.cs" />
+    <Compile Include="Migrations\201608072334348_AddGameFansTable.Designer.cs">
+      <DependentUpon>201608072334348_AddGameFansTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\ViewModels\AccountViewModels.cs" />
@@ -357,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608052044040_AddRpgGameRefTable.resx">
       <DependentUpon>201608052044040_AddRpgGameRefTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608072334348_AddGameFansTable.resx">
+      <DependentUpon>201608072334348_AddGameFansTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

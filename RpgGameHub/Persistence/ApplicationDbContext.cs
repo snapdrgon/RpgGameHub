@@ -7,6 +7,7 @@ namespace RpgGameHub.Persistence
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
     {
         public DbSet<Meetup> Meetups { get; set; }
+        public DbSet<GameFan> GameFans { get; set; }
         public DbSet<RpgGameRef> RpgGameRefs { get; set; }
 
         public ApplicationDbContext()
@@ -21,6 +22,9 @@ namespace RpgGameHub.Persistence
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<GameFan>().HasRequired(m => m.Meetup)
+                .WithMany(g => g.GameFans).WillCascadeOnDelete(false);
+
             base.OnModelCreating(modelBuilder);
         }
     }

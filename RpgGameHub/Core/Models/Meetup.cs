@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace RpgGameHub.Core.Models
@@ -27,6 +29,13 @@ namespace RpgGameHub.Core.Models
         [Required]
         public string Handle { get; set; }
         public bool IsCancelled { get; set; } //taz change back to private once going to production
+
+        public ICollection<GameFan> GameFans{ get; set; }
+
+        public Meetup()
+        {
+            GameFans = new Collection<GameFan>();
+        }
 
         public void Cancel()
         {

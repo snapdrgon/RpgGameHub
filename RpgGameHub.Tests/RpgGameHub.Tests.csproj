@@ -87,6 +87,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Controllers\Api\GameFanControllerTests.cs" />
     <Compile Include="Controllers\Api\MeetupControllerTests.cs" />
     <Compile Include="Extensions\MockDbSetExtensions.cs" />
     <Compile Include="Extensions\ApiControllerExtensions.cs" />

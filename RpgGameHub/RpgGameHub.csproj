@@ -203,6 +203,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\GameFanController.cs" />
+    <Compile Include="Controllers\Api\IGameFanController.cs" />
     <Compile Include="Controllers\Api\IMeetupController.cs" />
     <Compile Include="Controllers\Api\MeetupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -248,6 +250,8 @@
     <Compile Include="Persistence\ApplicationDbContext.cs" />
     <Compile Include="Persistence\IApplicationDbContext.cs" />
     <Compile Include="Persistence\IUnitOfWork.cs" />
+    <Compile Include="Persistence\Repositories\GameFanRepository.cs" />
+    <Compile Include="Persistence\Repositories\IGameFanRepository.cs" />
     <Compile Include="Persistence\Repositories\IMeetupRepository.cs" />
     <Compile Include="Persistence\Repositories\MeetupRepository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
@@ -279,6 +283,7 @@
     <None Include="Content\Site.less" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\controllers\gameFanController.js" />
     <Content Include="Scripts\app\controllers\meetupController.js" />
     <Content Include="Scripts\app\rpgGameHub.js" />
     <Content Include="Scripts\bootbox.min.js" />

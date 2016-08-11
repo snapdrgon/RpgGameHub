@@ -7,11 +7,13 @@ namespace RpgGameHub.Persistence
         private readonly IApplicationDbContext _context;
 
         public IMeetupRepository Meetups { get; private set; }
- 
+        public IGameFanRepository GameFans { get; set; }
+
         public UnitOfWork(IApplicationDbContext context)
         {
             _context = context;
             Meetups = new MeetupRepository(_context);
+            GameFans = new GameFanRepository(_context);
          }
 
         public void Complete()

@@ -18,9 +18,28 @@
                 return response.data;
             });
         }
+
+        var addAttendence = function (meetId, button) {
+            var url = '/api/gamefan/' + meetId;
+            return $http.post(url)
+            .then(function (response) {
+                return response.data;
+            });
+        }
+        var removeAttendence = function (meetId, button) {
+            var url = '/api/gamefan/' + meetId;
+            return $http.delete(url)
+            .then(function (response) {
+                return response.data;
+            });
+        }
+
+ 
         return {
             cancelMeetup: cancelMeetup,
-            getMeetupDetail: getMeetupDetail
+            getMeetupDetail: getMeetupDetail,
+            addAttendence:addAttendence,
+            removeAttendence:removeAttendence
         };
     };
     var module = angular.module("meetupApp");

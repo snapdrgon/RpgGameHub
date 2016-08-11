@@ -9,12 +9,12 @@
 
 <hr />
 
-<ul id="meetups" class="meetups voffset4">
+<ul id="meetups" ng-controller="GameFanController" class="meetups voffset4">
     @foreach (var meetup in Model.upcomingMeetups)
     {
         <li>
             <div class="meetup">
-                <div class="date" >
+                <div class="date">
                     <a class="detail_link" href="@Url.Action("Details", "Meetup", new { Id = meetup.Id } )">
                         <div class="month">
                             @meetup.DateTime.ToString("MMM")
@@ -40,8 +40,21 @@
                         <span class="badge">Cancelled</span>
                     }
                 </div>
+                <div>
+                    @if (!meetup.IsCancelled && Model.ShowActions)
+                    {
+                        @*<input type="button" ng-click="addDeleteAttendance($event, @meetup.Id)"
+                               class="attending btn @(meetup.GameFans.Any(g => g.MeetupId == meetup.Id && g.GamerId == Model.GameGeek) ? "btn-success" : "btn-default")"
+                               value="@(meetup.GameFans.Any(g => g.MeetupId == meetup.Id && g.GamerId == Model.GameGeek) ? "Attending" : "Attend?")">*@
+                        <button ng-click="addDeleteAttendance($event, @meetup.Id)"
+                                class="attending btn @(meetup.GameFans.Any(g => g.MeetupId == meetup.Id && g.GamerId == Model.GameGeek) ? "btn-success" : "btn-default")">
+                            @(meetup.GameFans.Any(g => g.MeetupId == meetup.Id && g.GamerId == Model.GameGeek) ? "Attending" : "Attend?")
+                        </button>
+                    }
+                </div>
             </div>
 
         </li>
                         }
 </ul>
+

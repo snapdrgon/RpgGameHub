@@ -37,7 +37,7 @@
             $scope.meetup = response;
         };
 
-         var onCancel = function (response) {
+        var onCancel = function (response) {
              $scope.cancel = response;
              window.location.reload();
          };

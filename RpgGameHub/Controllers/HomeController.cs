@@ -1,4 +1,5 @@
-﻿using RpgGameHub.Core.ViewModels;
+﻿using Microsoft.AspNet.Identity;
+using RpgGameHub.Core.ViewModels;
 using RpgGameHub.Persistence;
 using System.Web.Mvc;
 
@@ -15,12 +16,14 @@ namespace RpgGameHub.Controllers
         }
         public ActionResult Index()
         {
-            var upcomingMeetups = _unitOfWork.Meetups.GetUpComingMeetups();
 
             var viewModel = new MeetupViewModel
             {
                 Heading = "Upcoming Meetups",
-                upcomingMeetups = upcomingMeetups
+                GameGeek = User.Identity.GetUserId(),
+                upcomingMeetups = _unitOfWork.Meetups.GetUpComingMeetups(),
+                GameFans = _unitOfWork.GameFans.GetAllGameFans(),
+                ShowActions = User.Identity.IsAuthenticated              
             };
 
             return View("Meetups", viewModel);

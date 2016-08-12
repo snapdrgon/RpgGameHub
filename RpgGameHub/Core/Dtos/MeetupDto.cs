@@ -9,6 +9,7 @@
         public string Hub { get; set; }
         public string RgpGameName { get; set; }
         public string Url { get; set; }
+        public bool Attending { get; set; }
         public bool IsCancelled { get; set; } 
     }
 }

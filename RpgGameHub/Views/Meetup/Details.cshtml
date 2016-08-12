@@ -9,12 +9,20 @@
 
 <hr />
 
-<div class="meetupDetails voffset4" ng-controller="MeetupController">
+<div class="meetupDetails voffset4" ng-cloak ng-controller="MeetupController">
     <span ng-init="getMeetupDetail(@Model.id)"></span>
     <div class="voffset2">
         <text class="text-info gameName">
                 <a class="game_link" href="{{meetup.url}}" target="_blank">{{meetup.rgpGameName}}</a>
         </text>
+        <div ng-if="meetup.attending">
+            <div ng-if="!meetup.isCancelled">
+                <label class="meetupStatus label label-success">You're attending this Meetup</label>
+            </div>
+            <div ng-if="meetup.isCancelled">
+                <label class="meetupStatus label label-warning">You're schedulled to attend this Meetup but it has been cancelled</label>
+            </div>
+        </div>
     </div>
     <div class="dateTime voffset3">
         <label class="label label-default label-meetup">Meetup Info:</label>

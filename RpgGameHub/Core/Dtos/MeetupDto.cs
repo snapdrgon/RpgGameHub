@@ -10,6 +10,8 @@
         public string RgpGameName { get; set; }
         public string Url { get; set; }
         public bool Attending { get; set; }
-        public bool IsCancelled { get; set; } 
+        public bool IsCancelled { get; set; }
+        public bool ShowActions { get; set; }
+
     }
 }

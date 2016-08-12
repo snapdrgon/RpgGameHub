@@ -15,12 +15,14 @@
         <text class="text-info gameName">
                 <a class="game_link" href="{{meetup.url}}" target="_blank">{{meetup.rgpGameName}}</a>
         </text>
-        <div ng-if="meetup.attending">
-            <div ng-if="!meetup.isCancelled">
-                <label class="meetupStatus label label-success">You're attending this Meetup</label>
-            </div>
-            <div ng-if="meetup.isCancelled">
-                <label class="meetupStatus label label-warning">You're schedulled to attend this Meetup but it has been cancelled</label>
+        <div ng-if="meetup.ShowActions">
+            <div ng-if="meetup.attending">
+                <div ng-if="!meetup.isCancelled">
+                    <label class="meetupStatus label label-success">You're attending this Meetup</label>
+                </div>
+                <div ng-if="meetup.isCancelled">
+                    <label class="meetupStatus label label-warning">You're schedulled to attend this Meetup but it has been cancelled</label>
+                </div>
             </div>
         </div>
     </div>

@@ -13,6 +13,6 @@ namespace RpgGameHub.Persistence.Repositories
         IEnumerable<Meetup> GetUpComingMeetupsByGameMaster(string userId);
         Meetup GetSingleMeetupAssociatedWithGameMaster(int id, string userId);
 
-        MeetupDto GetMeetupDetails(int id);
+        MeetupDto GetMeetupDetails(int id, bool isAuthenticated);
     }
 }

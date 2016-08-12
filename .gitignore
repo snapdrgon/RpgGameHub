@@ -243,3 +243,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/RpgGameHub/Properties/PublishProfiles/RpgGameHub - Web Deploy.pubxml

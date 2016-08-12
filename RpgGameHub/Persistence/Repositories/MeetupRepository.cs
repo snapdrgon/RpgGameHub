@@ -37,7 +37,7 @@ namespace RpgGameHub.Persistence.Repositories
             m.GamerId==userId);
             return meetup;
         }
-        public MeetupDto GetMeetupDetails(int id)
+        public MeetupDto GetMeetupDetails(int id, bool isAuthenticated)
         {
             var meetup = _context.Meetups.Include(m => m.GameFans).SingleOrDefault(m => m.Id == id);
             if (meetup == null) //if null then no reason to continue
@@ -47,6 +47,7 @@ namespace RpgGameHub.Persistence.Repositories
             //intermediate step to set the RgpGameName, Date, Time and Url based on the RpgGameId
             var meetupDto = Mapper.Map<Meetup, MeetupDto>(meetup);
             meetupDto.Attending = meetup.GameFans.Count > 0; //anything over 0 indicated going
+            meetupDto.ShowActions = isAuthenticated;
             meetupDto.Date = meetup.DateTime.ToString("d MMM yyyy");
             meetupDto.Time = meetup.DateTime.ToString("HH:mm");
             meetupDto.Url = gameUrl[0]; //ugly .. need to change

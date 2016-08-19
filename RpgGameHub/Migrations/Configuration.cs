@@ -7,7 +7,7 @@ namespace RpgGameHub.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(RpgGameHub.Persistence.ApplicationDbContext context)

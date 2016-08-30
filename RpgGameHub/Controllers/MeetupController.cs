@@ -94,7 +94,7 @@ namespace RpgGameHub.Controllers
             {
                 Details = meetup.Details,
                 Hub = meetup.Hub,
-                RgpGame = (RpgGameType)meetup.RgpGameId,
+                RgpGame = (RpgGameTypeEnum)meetup.RgpGameId,
                 Id = meetup.Id,
                 Date = meetup.DateTime.ToString("d MMM yyyy"),
                 Time = meetup.DateTime.ToString("HH:mm"),

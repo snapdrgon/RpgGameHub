@@ -35,7 +35,7 @@ namespace RpgGameHub.IntegrationTests.Controllers
         {
             //Arrange
             var user = _context.Users.First();
-            _controller.MockCurrentUser( user.Id, user.UserName);
+            _controller.MockCurrentUser(user.Id, user.UserName);
             var meetup = new Meetup { Gamer = user, DateTime = DateTime.Now.AddDays(1), GamerId = user.Id, Handle = user.Handle, Details = "stuff", IsCancelled = false };
             _context.Meetups.Add(meetup);
             _context.SaveChanges();

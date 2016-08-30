@@ -15,11 +15,20 @@ namespace RpgGameHub.Migrations
          
             context.RpgGameRefs.AddOrUpdate(
                 r=>r.RpgGameId,
-                new RpgGameRef { RpgGameId = (byte)RpgGameType.DivinityOS, Url = @"http://www.divinityoriginalsin.com/" },
-                new RpgGameRef { RpgGameId = (byte)RpgGameType.Fallout, Url = @"https://www.fallout4.com/" },
-                new RpgGameRef { RpgGameId = (byte)RpgGameType.Inquisition, Url = @"https://www.dragonage.com/" },
-                new RpgGameRef { RpgGameId = (byte)RpgGameType.MassEffect, Url = @"http://masseffect.bioware.com/" },
-                new RpgGameRef { RpgGameId = (byte)RpgGameType.Skyrim, Url = @"http://www.elderscrolls.com/skyrim/" }
+                new RpgGameRef { RpgGameId = (byte)RpgGameTypeEnum.DivinityOS, Url = @"http://www.divinityoriginalsin.com/" },
+                new RpgGameRef { RpgGameId = (byte)RpgGameTypeEnum.Fallout, Url = @"https://www.fallout4.com/" },
+                new RpgGameRef { RpgGameId = (byte)RpgGameTypeEnum.Inquisition, Url = @"https://www.dragonage.com/" },
+                new RpgGameRef { RpgGameId = (byte)RpgGameTypeEnum.MassEffect, Url = @"http://masseffect.bioware.com/" },
+                new RpgGameRef { RpgGameId = (byte)RpgGameTypeEnum.Skyrim, Url = @"http://www.elderscrolls.com/skyrim/" }
+                );
+
+            context.RpgGameTypes.AddOrUpdate(
+                r => r.Id,
+                new RpgGameType { Id = (byte)RpgGameTypeEnum.DivinityOS, Name = "Divinity Original Sin" },
+                new RpgGameType { Id = (byte)RpgGameTypeEnum.Fallout, Name = "Fallout" },
+                new RpgGameType { Id = (byte)RpgGameTypeEnum.Inquisition, Name = "Inquisition" },
+                new RpgGameType { Id = (byte)RpgGameTypeEnum.MassEffect, Name = "MassEffect" },
+                new RpgGameType { Id = (byte)RpgGameTypeEnum.Skyrim, Name = "Skyrim" }
                 );
 
         }

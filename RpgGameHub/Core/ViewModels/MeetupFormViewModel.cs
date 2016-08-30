@@ -33,7 +33,7 @@ namespace RpgGameHub.Core.ViewModels
 
         [Required]
         [ValidRpgGame]
-        public RpgGameType? RgpGame { get; set; }
+        public RpgGameTypeEnum? RgpGame { get; set; }
 
         public string Action
         {

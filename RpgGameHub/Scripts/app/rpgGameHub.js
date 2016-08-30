@@ -1,6 +1,6 @@
 ﻿(function(){
   
-    var rpgGameHub = function($http){
+    var rpgGameHub = function($http, $scope){
     
         var cancelMeetup = function (rpgGameId) {
             var url = '/api/meetup/' + rpgGameId;
@@ -34,10 +34,19 @@
             });
         }
 
+        var getGameList =  function () {
+            var url = '/api/rpggametype/';
+            return $http.get(url)
+            .then(function (response) {
+                return response.data;
+            });
+        }
+
  
         return {
             cancelMeetup: cancelMeetup,
             getMeetupDetail: getMeetupDetail,
+            getGameList:getGameList,
             addAttendence:addAttendence,
             removeAttendence:removeAttendence
         };

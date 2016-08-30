@@ -12,7 +12,7 @@ namespace RpgGameHub.Core.ViewModels
         {
             if (value == null)
                 return false;
-            var isValid = (RpgGameType)value >= RpgGameType.DivinityOS;
+            var isValid = (RpgGameTypeEnum)value >= RpgGameTypeEnum.DivinityOS;
             return (isValid);
         }
         public override string FormatErrorMessage(string name)

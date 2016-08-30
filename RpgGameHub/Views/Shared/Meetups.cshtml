@@ -29,7 +29,7 @@
                 </div>
                 <div class="details">
                     @{
-                        var rpgGame = ((RpgGameType)meetup.RgpGameId);
+                        var rpgGame = ((RpgGameTypeEnum)meetup.RgpGameId);
                     }
                     <span class="rpgGame">@rpgGame</span>
                     <div class="gameMaster">@meetup.Handle</div>
@@ -43,10 +43,7 @@
                 <div>
                     @if (!meetup.IsCancelled && Model.ShowActions)
                     {
-                        @*<input type="button" ng-click="addDeleteAttendance($event, @meetup.Id)"
-                               class="attending btn @(meetup.GameFans.Any(g => g.MeetupId == meetup.Id && g.GamerId == Model.GameGeek) ? "btn-success" : "btn-default")"
-                               value="@(meetup.GameFans.Any(g => g.MeetupId == meetup.Id && g.GamerId == Model.GameGeek) ? "Attending" : "Attend?")">*@
-                        <button ng-click="addDeleteAttendance($event, @meetup.Id)"
+                           <button ng-click="addDeleteAttendance($event, @meetup.Id)"
                                 class="attending btn @(meetup.GameFans.Any(g => g.MeetupId == meetup.Id && g.GamerId == Model.GameGeek) ? "btn-success" : "btn-default")">
                             @(meetup.GameFans.Any(g => g.MeetupId == meetup.Id && g.GamerId == Model.GameGeek) ? "Attending" : "Attend?")
                         </button>

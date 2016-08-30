@@ -12,7 +12,8 @@ namespace RpgGameHub
                      "~/Scripts/app/app.js",
                       "~/Scripts/app/rpggamehub.js",
                      "~/Scripts/app/controllers/meetupcontroller.js",
-                     "~/Scripts/app/controllers/gamefancontroller.js"
+                     "~/Scripts/app/controllers/gamefancontroller.js",
+                     "~/Scripts/app/controllers/rpggametypecontroller.js"
                      ));
 
             bundles.Add(new ScriptBundle("~/bundles/lib").Include(

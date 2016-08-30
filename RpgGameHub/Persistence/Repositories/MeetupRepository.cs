@@ -51,7 +51,7 @@ namespace RpgGameHub.Persistence.Repositories
             meetupDto.Date = meetup.DateTime.ToString("d MMM yyyy");
             meetupDto.Time = meetup.DateTime.ToString("HH:mm");
             meetupDto.Url = gameUrl[0]; //ugly .. need to change
-            meetupDto.RgpGameName = ((RpgGameType)meetup.RgpGameId).EnumDesc();
+            meetupDto.RgpGameName = ((RpgGameTypeEnum)meetup.RgpGameId).EnumDesc();
             return meetupDto;
         }
 

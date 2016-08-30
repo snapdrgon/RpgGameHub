@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,10 +44,19 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=4.13.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.13.0\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.13.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.13.0\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -70,17 +81,15 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -121,6 +130,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
@@ -206,7 +216,9 @@
     <Compile Include="Controllers\Api\GameFanController.cs" />
     <Compile Include="Controllers\Api\IGameFanController.cs" />
     <Compile Include="Controllers\Api\IMeetupController.cs" />
+    <Compile Include="Controllers\Api\IRpgGameTypeController.cs" />
     <Compile Include="Controllers\Api\MeetupController.cs" />
+    <Compile Include="Controllers\Api\RpgGameTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeetupController.cs" />
@@ -215,6 +227,7 @@
     <Compile Include="Core\Models\GameFan.cs" />
     <Compile Include="Core\Models\Meetup.cs" />
     <Compile Include="Core\Models\RpgGameRef.cs" />
+    <Compile Include="Core\Models\RpgGameTypeEnum.cs" />
     <Compile Include="Core\Models\RpgGameType.cs" />
     <Compile Include="Core\ViewModels\DetailViewModel.cs" />
     <Compile Include="Core\ViewModels\FutureDate.cs" />
@@ -243,6 +256,10 @@
     <Compile Include="Migrations\201608072334348_AddGameFansTable.Designer.cs">
       <DependentUpon>201608072334348_AddGameFansTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608200031254_AddRpgGameTypesTable.cs" />
+    <Compile Include="Migrations\201608200031254_AddRpgGameTypesTable.Designer.cs">
+      <DependentUpon>201608200031254_AddRpgGameTypesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\ViewModels\AccountViewModels.cs" />
     <Compile Include="Core\Models\ApplicationUser.cs" />
@@ -253,7 +270,9 @@
     <Compile Include="Persistence\Repositories\GameFanRepository.cs" />
     <Compile Include="Persistence\Repositories\IGameFanRepository.cs" />
     <Compile Include="Persistence\Repositories\IMeetupRepository.cs" />
+    <Compile Include="Persistence\Repositories\IRpgGameTypeRepository.cs" />
     <Compile Include="Persistence\Repositories\MeetupRepository.cs" />
+    <Compile Include="Persistence\Repositories\RpgGameTypeRepository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -285,14 +304,14 @@
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\gameFanController.js" />
     <Content Include="Scripts\app\controllers\meetupController.js" />
+    <Content Include="Scripts\app\controllers\RpgGameTypeController.js" />
     <Content Include="Scripts\app\rpgGameHub.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <None Include="Properties\PublishProfiles\RpgGameHub - Web Deploy %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\RpgGameHub - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\takware.net - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -372,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608072334348_AddGameFansTable.resx">
       <DependentUpon>201608072334348_AddGameFansTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608200031254_AddRpgGameTypesTable.resx">
+      <DependentUpon>201608200031254_AddRpgGameTypesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

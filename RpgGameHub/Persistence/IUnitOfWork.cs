@@ -7,6 +7,8 @@ namespace RpgGameHub.Persistence
         IMeetupRepository Meetups { get; }
         IGameFanRepository GameFans { get; set; }
 
+        IRpgGameTypeRepository RpgGameTypes { get; set; }
+
         void Complete();
     }
 }

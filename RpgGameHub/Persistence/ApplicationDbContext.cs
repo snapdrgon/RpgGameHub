@@ -9,6 +9,8 @@ namespace RpgGameHub.Persistence
         public DbSet<Meetup> Meetups { get; set; }
         public DbSet<GameFan> GameFans { get; set; }
         public DbSet<RpgGameRef> RpgGameRefs { get; set; }
+        public DbSet<RpgGameType> RpgGameTypes { get; set; }
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

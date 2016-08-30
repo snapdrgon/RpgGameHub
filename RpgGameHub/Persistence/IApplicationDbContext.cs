@@ -8,6 +8,7 @@ namespace RpgGameHub.Persistence
         DbSet<Meetup> Meetups { get; set; }
         DbSet<GameFan> GameFans { get; set; }
         DbSet<RpgGameRef> RpgGameRefs { get; set; }
+        DbSet<RpgGameType> RpgGameTypes { get; set; }
         int SaveChanges();
   }
 
